@@ -1,0 +1,75 @@
+# ── Dataset ───────────────────────────────────────────
+datasets:
+  basichouse:
+    data_dir: data/BasicHouse_with_pc
+    rgb_dir: data/BasicHouse_with_pc/rgb
+    depth_dir: data/BasicHouse_with_pc/depth_png16
+    pose_file: data/BasicHouse_with_pc/pose/poses.txt
+    camera_info: data/BasicHouse_with_pc/camera_info.json
+    ifc_labels: data/BasicHouse_with_pc/_ifcgeom_scene.labels.json
+    ifc_obj: data/BasicHouse_with_pc/_ifcgeom_scene.obj
+    pointcloud: data/BasicHouse_with_pc/pointcloud/scene.ply
+
+  synagogue:
+    data_dir: data/synagoge_with_pc
+    rgb_dir: data/synagoge_with_pc/rgb
+    depth_dir: data/synagoge_with_pc/depth_png16
+    pose_file: data/synagoge_with_pc/pose/poses.txt
+    camera_info: data/synagoge_with_pc/camera_info.json
+    ifc_labels: data/synagoge_with_pc/_ifcgeom_scene.labels.json
+    ifc_obj: data/synagoge_with_pc/_ifcgeom_scene.obj
+    pointcloud: data/synagoge_with_pc/pointcloud/scene.ply
+
+# ── Active scene (switch between basichouse / synagogue)
+active_scene: basichouse
+
+# ── Output ────────────────────────────────────────────
+output:
+  dir: output/
+  scene_graph_file: output/scene_graph.graphml
+  visualization_dir: output/viz/
+
+# ── Object Detection ──────────────────────────────────
+detection:
+  model: yolov8m.pt
+  confidence_threshold: 0.45
+  frame_step: 5            # process every Nth frame (speed vs coverage)
+  target_classes:          # COCO classes relevant to indoor scenes
+    - chair
+    - couch
+    - bed
+    - dining table
+    - toilet
+    - tv
+    - laptop
+    - refrigerator
+    - oven
+    - sink
+    - door
+    - window
+    - clock
+    - vase
+    - bottle
+
+# ── 3D Spatial ────────────────────────────────────────
+spatial:
+  depth_scale: 1000.0          # divide PNG16 value by this to get meters
+  max_depth_m: 10.0            # ignore detections beyond this distance
+  clustering_eps_m: 0.5        # DBSCAN eps — merge detections within 0.5m
+  clustering_min_samples: 2    # minimum detections to form a cluster
+  proximity_threshold_m: 2.0   # max distance for "near" edges in graph
+
+# ── BIM Priors ────────────────────────────────────────
+bim:
+  structural_classes:
+    - IfcWall
+    - IfcWallStandardCase
+    - IfcDoor
+    - IfcWindow
+    - IfcSlab
+    - IfcColumn
+    - IfcRoof
+    - IfcFurnishingElement
+  portal_classes:
+    - IfcDoor
+  room_assignment_z_tolerance: 0.5
