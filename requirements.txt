@@ -1,26 +1,15 @@
-# Core
 numpy
 opencv-python
 Pillow
-
-# Deep Learning - Object Detection
 torch
 torchvision
 ultralytics
-
-# 3D
 plotly
 trimesh
-
-# Geometry & Spatial
 shapely
 scipy
 scikit-learn
-
-# Scene Graph
 networkx
-
-# Config & Utils
 pyyaml
 tqdm
 matplotlib
