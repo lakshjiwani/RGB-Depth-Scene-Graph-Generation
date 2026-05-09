@@ -1,0 +1,5 @@
+output/**  linguist-generated=true
+output/**  linguist-vendored=true
+*.ipynb    linguist-generated=true
+*.yaml     linguist-documentation=true
+*.yml      linguist-documentation=true
