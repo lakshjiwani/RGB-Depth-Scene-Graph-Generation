@@ -567,8 +567,12 @@ class SceneGraphBuilder:
             ],
             "edges": [
                 {
-                    "from"      : u,
-                    "to"        : v,
+                    "from"      : u if G.nodes[u].get("node_type") == "ifc"
+                                or d.get("edge_type") == "proximity"
+                                else v,
+                    "to"        : v if G.nodes[u].get("node_type") == "ifc"
+                                or d.get("edge_type") == "proximity"
+                                else u,
                     "edge_type" : d.get("edge_type"),
                     "relation"  : d.get("relation"),
                     "distance"  : d.get("distance"),

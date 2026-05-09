@@ -1,0 +1,1164 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d23" for="edge" attr.name="portal_type" attr.type="string" />
+  <key id="d22" for="edge" attr.name="ifc_class" attr.type="string" />
+  <key id="d21" for="edge" attr.name="weight" attr.type="double" />
+  <key id="d20" for="edge" attr.name="distance" attr.type="double" />
+  <key id="d19" for="edge" attr.name="relation" attr.type="string" />
+  <key id="d18" for="edge" attr.name="edge_type" attr.type="string" />
+  <key id="d17" for="node" attr.name="bbox_max" attr.type="string" />
+  <key id="d16" for="node" attr.name="bbox_min" attr.type="string" />
+  <key id="d15" for="node" attr.name="category" attr.type="string" />
+  <key id="d14" for="node" attr.name="ifc_id" attr.type="string" />
+  <key id="d13" for="node" attr.name="ifc_class" attr.type="string" />
+  <key id="d12" for="node" attr.name="label" attr.type="string" />
+  <key id="d11" for="node" attr.name="source" attr.type="string" />
+  <key id="d10" for="node" attr.name="detection_count" attr.type="long" />
+  <key id="d9" for="node" attr.name="confidence" attr.type="double" />
+  <key id="d8" for="node" attr.name="z" attr.type="double" />
+  <key id="d7" for="node" attr.name="y" attr.type="double" />
+  <key id="d6" for="node" attr.name="x" attr.type="double" />
+  <key id="d5" for="node" attr.name="centroid" attr.type="string" />
+  <key id="d4" for="node" attr.name="class_name" attr.type="string" />
+  <key id="d3" for="node" attr.name="node_type" attr.type="string" />
+  <key id="d2" for="graph" attr.name="containment_tolerance" attr.type="double" />
+  <key id="d1" for="graph" attr.name="proximity_threshold_m" attr.type="double" />
+  <key id="d0" for="graph" attr.name="description" attr.type="string" />
+  <graph edgedefault="undirected">
+    <node id="visual_0_dining_table">
+      <data key="d3">visual</data>
+      <data key="d4">dining table</data>
+      <data key="d5">[-3.8898138999938965, 3.4158124923706055, -2.497271776199341]</data>
+      <data key="d6">-3.8898138999938965</data>
+      <data key="d7">3.4158124923706055</data>
+      <data key="d8">-2.497271776199341</data>
+      <data key="d9">0.13261665403842926</data>
+      <data key="d10">1</data>
+      <data key="d11">yolov8m</data>
+      <data key="d12">dining table</data>
+    </node>
+    <node id="visual_1_dining_table">
+      <data key="d3">visual</data>
+      <data key="d4">dining table</data>
+      <data key="d5">[-5.6674675941467285, 6.656477928161621, -1.3115860223770142]</data>
+      <data key="d6">-5.6674675941467285</data>
+      <data key="d7">6.656477928161621</data>
+      <data key="d8">-1.3115860223770142</data>
+      <data key="d9">0.36207881569862366</data>
+      <data key="d10">1</data>
+      <data key="d11">yolov8m</data>
+      <data key="d12">dining table</data>
+    </node>
+    <node id="visual_2_dining_table">
+      <data key="d3">visual</data>
+      <data key="d4">dining table</data>
+      <data key="d5">[10.680182456970215, -0.3385719656944275, -0.38579261302948]</data>
+      <data key="d6">10.680182456970215</data>
+      <data key="d7">-0.3385719656944275</data>
+      <data key="d8">-0.38579261302948</data>
+      <data key="d9">0.43226397037506104</data>
+      <data key="d10">1</data>
+      <data key="d11">yolov8m</data>
+      <data key="d12">dining table</data>
+    </node>
+    <node id="visual_3_dining_table">
+      <data key="d3">visual</data>
+      <data key="d4">dining table</data>
+      <data key="d5">[11.525519371032715, -2.078526496887207, -0.7953994274139404]</data>
+      <data key="d6">11.525519371032715</data>
+      <data key="d7">-2.078526496887207</data>
+      <data key="d8">-0.7953994274139404</data>
+      <data key="d9">0.1979166716337204</data>
+      <data key="d10">1</data>
+      <data key="d11">yolov8m</data>
+      <data key="d12">dining table</data>
+    </node>
+    <node id="visual_4_dining_table">
+      <data key="d3">visual</data>
+      <data key="d4">dining table</data>
+      <data key="d5">[-0.724438488483429, 1.829432487487793, -1.880609393119812]</data>
+      <data key="d6">-0.724438488483429</data>
+      <data key="d7">1.829432487487793</data>
+      <data key="d8">-1.880609393119812</data>
+      <data key="d9">0.10409071296453476</data>
+      <data key="d10">1</data>
+      <data key="d11">yolov8m</data>
+      <data key="d12">dining table</data>
+    </node>
+    <node id="visual_5_dining_table">
+      <data key="d3">visual</data>
+      <data key="d4">dining table</data>
+      <data key="d5">[2.1100456714630127, 1.6273467540740967, -1.3690489530563354]</data>
+      <data key="d6">2.1100456714630127</data>
+      <data key="d7">1.6273467540740967</data>
+      <data key="d8">-1.3690489530563354</data>
+      <data key="d9">0.3413766026496887</data>
+      <data key="d10">1</data>
+      <data key="d11">yolov8m</data>
+      <data key="d12">dining table</data>
+    </node>
+    <node id="visual_6_dining_table">
+      <data key="d3">visual</data>
+      <data key="d4">dining table</data>
+      <data key="d5">[6.2540974617004395, 2.229663848876953, -1.3673454523086548]</data>
+      <data key="d6">6.2540974617004395</data>
+      <data key="d7">2.229663848876953</data>
+      <data key="d8">-1.3673454523086548</data>
+      <data key="d9">0.35413822531700134</data>
+      <data key="d10">1</data>
+      <data key="d11">yolov8m</data>
+      <data key="d12">dining table</data>
+    </node>
+    <node id="visual_7_dining_table">
+      <data key="d3">visual</data>
+      <data key="d4">dining table</data>
+      <data key="d5">[4.973450183868408, 2.115304946899414, -1.0546373128890991]</data>
+      <data key="d6">4.973450183868408</data>
+      <data key="d7">2.115304946899414</data>
+      <data key="d8">-1.0546373128890991</data>
+      <data key="d9">0.3384568989276886</data>
+      <data key="d10">1</data>
+      <data key="d11">yolov8m</data>
+      <data key="d12">dining table</data>
+    </node>
+    <node id="visual_8_dining_table">
+      <data key="d3">visual</data>
+      <data key="d4">dining table</data>
+      <data key="d5">[8.267114639282227, 2.7238805294036865, -1.0974985361099243]</data>
+      <data key="d6">8.267114639282227</data>
+      <data key="d7">2.7238805294036865</data>
+      <data key="d8">-1.0974985361099243</data>
+      <data key="d9">0.3537795841693878</data>
+      <data key="d10">1</data>
+      <data key="d11">yolov8m</data>
+      <data key="d12">dining table</data>
+    </node>
+    <node id="visual_9_dining_table">
+      <data key="d3">visual</data>
+      <data key="d4">dining table</data>
+      <data key="d5">[20.029050827026367, -1.6087749004364014, -0.40110546350479126]</data>
+      <data key="d6">20.029050827026367</data>
+      <data key="d7">-1.6087749004364014</data>
+      <data key="d8">-0.40110546350479126</data>
+      <data key="d9">0.11798708140850067</data>
+      <data key="d10">1</data>
+      <data key="d11">yolov8m</data>
+      <data key="d12">dining table</data>
+    </node>
+    <node id="visual_10_dining_table">
+      <data key="d3">visual</data>
+      <data key="d4">dining table</data>
+      <data key="d5">[13.621196746826172, 0.1948508322238922, -0.9409392476081848]</data>
+      <data key="d6">13.621196746826172</data>
+      <data key="d7">0.1948508322238922</data>
+      <data key="d8">-0.9409392476081848</data>
+      <data key="d9">0.12674358487129211</data>
+      <data key="d10">1</data>
+      <data key="d11">yolov8m</data>
+      <data key="d12">dining table</data>
+    </node>
+    <node id="visual_11_dining_table">
+      <data key="d3">visual</data>
+      <data key="d4">dining table</data>
+      <data key="d5">[8.251590728759766, 3.252878189086914, -1.0935840606689453]</data>
+      <data key="d6">8.251590728759766</data>
+      <data key="d7">3.252878189086914</data>
+      <data key="d8">-1.0935840606689453</data>
+      <data key="d9">0.27148354053497314</data>
+      <data key="d10">1</data>
+      <data key="d11">yolov8m</data>
+      <data key="d12">dining table</data>
+    </node>
+    <node id="visual_12_dining_table">
+      <data key="d3">visual</data>
+      <data key="d4">dining table</data>
+      <data key="d5">[9.326652526855469, 1.435579538345337, -1.9728233814239502]</data>
+      <data key="d6">9.326652526855469</data>
+      <data key="d7">1.435579538345337</data>
+      <data key="d8">-1.9728233814239502</data>
+      <data key="d9">0.0950607880949974</data>
+      <data key="d10">1</data>
+      <data key="d11">yolov8m</data>
+      <data key="d12">dining table</data>
+    </node>
+    <node id="visual_13_dining_table">
+      <data key="d3">visual</data>
+      <data key="d4">dining table</data>
+      <data key="d5">[5.476082801818848, 2.1115872859954834, -2.2673180103302]</data>
+      <data key="d6">5.476082801818848</data>
+      <data key="d7">2.1115872859954834</data>
+      <data key="d8">-2.2673180103302</data>
+      <data key="d9">0.10314721614122391</data>
+      <data key="d10">1</data>
+      <data key="d11">yolov8m</data>
+      <data key="d12">dining table</data>
+    </node>
+    <node id="visual_14_chair">
+      <data key="d3">visual</data>
+      <data key="d4">chair</data>
+      <data key="d5">[-5.247530460357666, 7.152778148651123, -1.3031765222549438]</data>
+      <data key="d6">-5.247530460357666</data>
+      <data key="d7">7.152778148651123</data>
+      <data key="d8">-1.3031765222549438</data>
+      <data key="d9">0.5469359159469604</data>
+      <data key="d10">1</data>
+      <data key="d11">yolov8m</data>
+      <data key="d12">chair</data>
+    </node>
+    <node id="visual_15_chair">
+      <data key="d3">visual</data>
+      <data key="d4">chair</data>
+      <data key="d5">[-3.97070574760437, 4.836822509765625, -1.025634527206421]</data>
+      <data key="d6">-3.97070574760437</data>
+      <data key="d7">4.836822509765625</data>
+      <data key="d8">-1.025634527206421</data>
+      <data key="d9">0.09576354920864105</data>
+      <data key="d10">1</data>
+      <data key="d11">yolov8m</data>
+      <data key="d12">chair</data>
+    </node>
+    <node id="visual_16_chair">
+      <data key="d3">visual</data>
+      <data key="d4">chair</data>
+      <data key="d5">[3.1598315238952637, 0.5499621629714966, -0.6190945506095886]</data>
+      <data key="d6">3.1598315238952637</data>
+      <data key="d7">0.5499621629714966</data>
+      <data key="d8">-0.6190945506095886</data>
+      <data key="d9">0.2307128608226776</data>
+      <data key="d10">1</data>
+      <data key="d11">yolov8m</data>
+      <data key="d12">chair</data>
+    </node>
+    <node id="visual_17_chair">
+      <data key="d3">visual</data>
+      <data key="d4">chair</data>
+      <data key="d5">[6.971124172210693, -1.1746104955673218, -0.8183260560035706]</data>
+      <data key="d6">6.971124172210693</data>
+      <data key="d7">-1.1746104955673218</data>
+      <data key="d8">-0.8183260560035706</data>
+      <data key="d9">0.41841351985931396</data>
+      <data key="d10">1</data>
+      <data key="d11">yolov8m</data>
+      <data key="d12">chair</data>
+    </node>
+    <node id="visual_18_chair">
+      <data key="d3">visual</data>
+      <data key="d4">chair</data>
+      <data key="d5">[7.308219909667969, 5.052570343017578, -1.057479977607727]</data>
+      <data key="d6">7.308219909667969</data>
+      <data key="d7">5.052570343017578</data>
+      <data key="d8">-1.057479977607727</data>
+      <data key="d9">0.42956069111824036</data>
+      <data key="d10">3</data>
+      <data key="d11">yolov8m</data>
+      <data key="d12">chair</data>
+    </node>
+    <node id="visual_19_chair">
+      <data key="d3">visual</data>
+      <data key="d4">chair</data>
+      <data key="d5">[6.768736362457275, 1.4820938110351562, -0.831092894077301]</data>
+      <data key="d6">6.768736362457275</data>
+      <data key="d7">1.4820938110351562</data>
+      <data key="d8">-0.831092894077301</data>
+      <data key="d9">0.12689697742462158</data>
+      <data key="d10">1</data>
+      <data key="d11">yolov8m</data>
+      <data key="d12">chair</data>
+    </node>
+    <node id="visual_20_chair">
+      <data key="d3">visual</data>
+      <data key="d4">chair</data>
+      <data key="d5">[3.979396104812622, 3.267446517944336, -0.6127549409866333]</data>
+      <data key="d6">3.979396104812622</data>
+      <data key="d7">3.267446517944336</data>
+      <data key="d8">-0.6127549409866333</data>
+      <data key="d9">0.11631906777620316</data>
+      <data key="d10">1</data>
+      <data key="d11">yolov8m</data>
+      <data key="d12">chair</data>
+    </node>
+    <node id="visual_21_chair">
+      <data key="d3">visual</data>
+      <data key="d4">chair</data>
+      <data key="d5">[-6.091057300567627, 4.778650283813477, -2.2624216079711914]</data>
+      <data key="d6">-6.091057300567627</data>
+      <data key="d7">4.778650283813477</data>
+      <data key="d8">-2.2624216079711914</data>
+      <data key="d9">0.5032774806022644</data>
+      <data key="d10">1</data>
+      <data key="d11">yolov8m</data>
+      <data key="d12">chair</data>
+    </node>
+    <node id="visual_22_chair">
+      <data key="d3">visual</data>
+      <data key="d4">chair</data>
+      <data key="d5">[-2.691645383834839, 3.259479284286499, -2.1153414249420166]</data>
+      <data key="d6">-2.691645383834839</data>
+      <data key="d7">3.259479284286499</data>
+      <data key="d8">-2.1153414249420166</data>
+      <data key="d9">0.4026230573654175</data>
+      <data key="d10">3</data>
+      <data key="d11">yolov8m</data>
+      <data key="d12">chair</data>
+    </node>
+    <node id="visual_23_chair">
+      <data key="d3">visual</data>
+      <data key="d4">chair</data>
+      <data key="d5">[-1.5745820999145508, 2.922724485397339, -2.241995096206665]</data>
+      <data key="d6">-1.5745820999145508</data>
+      <data key="d7">2.922724485397339</data>
+      <data key="d8">-2.241995096206665</data>
+      <data key="d9">0.35185742378234863</data>
+      <data key="d10">1</data>
+      <data key="d11">yolov8m</data>
+      <data key="d12">chair</data>
+    </node>
+    <node id="visual_24_chair">
+      <data key="d3">visual</data>
+      <data key="d4">chair</data>
+      <data key="d5">[-5.591968536376953, 3.969696044921875, -2.2355635166168213]</data>
+      <data key="d6">-5.591968536376953</data>
+      <data key="d7">3.969696044921875</data>
+      <data key="d8">-2.2355635166168213</data>
+      <data key="d9">0.31701552867889404</data>
+      <data key="d10">2</data>
+      <data key="d11">yolov8m</data>
+      <data key="d12">chair</data>
+    </node>
+    <node id="visual_25_chair">
+      <data key="d3">visual</data>
+      <data key="d4">chair</data>
+      <data key="d5">[-2.0555663108825684, 3.447187900543213, -2.5212135314941406]</data>
+      <data key="d6">-2.0555663108825684</data>
+      <data key="d7">3.447187900543213</data>
+      <data key="d8">-2.5212135314941406</data>
+      <data key="d9">0.3141908645629883</data>
+      <data key="d10">1</data>
+      <data key="d11">yolov8m</data>
+      <data key="d12">chair</data>
+    </node>
+    <node id="visual_26_chair">
+      <data key="d3">visual</data>
+      <data key="d4">chair</data>
+      <data key="d5">[-7.943136692047119, 4.4608988761901855, -2.2562358379364014]</data>
+      <data key="d6">-7.943136692047119</data>
+      <data key="d7">4.4608988761901855</data>
+      <data key="d8">-2.2562358379364014</data>
+      <data key="d9">0.158404141664505</data>
+      <data key="d10">1</data>
+      <data key="d11">yolov8m</data>
+      <data key="d12">chair</data>
+    </node>
+    <node id="visual_27_chair">
+      <data key="d3">visual</data>
+      <data key="d4">chair</data>
+      <data key="d5">[-1.1478214263916016, 2.1403756141662598, -1.7713744640350342]</data>
+      <data key="d6">-1.1478214263916016</data>
+      <data key="d7">2.1403756141662598</data>
+      <data key="d8">-1.7713744640350342</data>
+      <data key="d9">0.23768916726112366</data>
+      <data key="d10">1</data>
+      <data key="d11">yolov8m</data>
+      <data key="d12">chair</data>
+    </node>
+    <node id="visual_28_chair">
+      <data key="d3">visual</data>
+      <data key="d4">chair</data>
+      <data key="d5">[2.664668321609497, 2.8768601417541504, -1.7968671321868896]</data>
+      <data key="d6">2.664668321609497</data>
+      <data key="d7">2.8768601417541504</data>
+      <data key="d8">-1.7968671321868896</data>
+      <data key="d9">0.10871788114309311</data>
+      <data key="d10">1</data>
+      <data key="d11">yolov8m</data>
+      <data key="d12">chair</data>
+    </node>
+    <node id="visual_29_chair">
+      <data key="d3">visual</data>
+      <data key="d4">chair</data>
+      <data key="d5">[3.5373106002807617, 0.7526472806930542, -1.442312479019165]</data>
+      <data key="d6">3.5373106002807617</data>
+      <data key="d7">0.7526472806930542</data>
+      <data key="d8">-1.442312479019165</data>
+      <data key="d9">0.1465902477502823</data>
+      <data key="d10">1</data>
+      <data key="d11">yolov8m</data>
+      <data key="d12">chair</data>
+    </node>
+    <node id="visual_30_chair">
+      <data key="d3">visual</data>
+      <data key="d4">chair</data>
+      <data key="d5">[12.637932777404785, 2.0123701095581055, -1.3858754634857178]</data>
+      <data key="d6">12.637932777404785</data>
+      <data key="d7">2.0123701095581055</data>
+      <data key="d8">-1.3858754634857178</data>
+      <data key="d9">0.45022034645080566</data>
+      <data key="d10">2</data>
+      <data key="d11">yolov8m</data>
+      <data key="d12">chair</data>
+    </node>
+    <node id="visual_31_chair">
+      <data key="d3">visual</data>
+      <data key="d4">chair</data>
+      <data key="d5">[5.2761993408203125, 3.2739310264587402, -1.6697708368301392]</data>
+      <data key="d6">5.2761993408203125</data>
+      <data key="d7">3.2739310264587402</data>
+      <data key="d8">-1.6697708368301392</data>
+      <data key="d9">0.8008756041526794</data>
+      <data key="d10">2</data>
+      <data key="d11">yolov8m</data>
+      <data key="d12">chair</data>
+    </node>
+    <node id="visual_32_chair">
+      <data key="d3">visual</data>
+      <data key="d4">chair</data>
+      <data key="d5">[6.695115566253662, 3.3454275131225586, -1.803483247756958]</data>
+      <data key="d6">6.695115566253662</data>
+      <data key="d7">3.3454275131225586</data>
+      <data key="d8">-1.803483247756958</data>
+      <data key="d9">0.6644821166992188</data>
+      <data key="d10">4</data>
+      <data key="d11">yolov8m</data>
+      <data key="d12">chair</data>
+    </node>
+    <node id="visual_33_couch">
+      <data key="d3">visual</data>
+      <data key="d4">couch</data>
+      <data key="d5">[3.159971237182617, 0.5482645630836487, -0.6201401352882385]</data>
+      <data key="d6">3.159971237182617</data>
+      <data key="d7">0.5482645630836487</data>
+      <data key="d8">-0.6201401352882385</data>
+      <data key="d9">0.23600342869758606</data>
+      <data key="d10">1</data>
+      <data key="d11">yolov8m</data>
+      <data key="d12">couch</data>
+    </node>
+    <node id="visual_34_bed">
+      <data key="d3">visual</data>
+      <data key="d4">bed</data>
+      <data key="d5">[5.7951273918151855, 3.5537185668945312, -0.6113003492355347]</data>
+      <data key="d6">5.7951273918151855</data>
+      <data key="d7">3.5537185668945312</data>
+      <data key="d8">-0.6113003492355347</data>
+      <data key="d9">0.2557794749736786</data>
+      <data key="d10">1</data>
+      <data key="d11">yolov8m</data>
+      <data key="d12">bed</data>
+    </node>
+    <node id="ifc_2DedXznHnD_IfcBuildingElementProxy">
+      <data key="d3">ifc</data>
+      <data key="d13">IfcBuildingElementProxy</data>
+      <data key="d14">2DedXznHnDaeAWsrTB_q8a</data>
+      <data key="d4">M_Refrigerator</data>
+      <data key="d15">structural</data>
+      <data key="d5">[1.8339938259596935, -3.911406580618123, 0.9150000000000026]</data>
+      <data key="d6">1.8339938259596935</data>
+      <data key="d7">-3.911406580618123</data>
+      <data key="d8">0.9150000000000026</data>
+      <data key="d16">[1.5339938259596935, -4.263565968737155, 0.0]</data>
+      <data key="d17">[2.133993825959694, -3.5592471924990905, 1.8300000000000052]</data>
+      <data key="d11">ifc</data>
+      <data key="d12">IfcBuildingElementProxy: M_Refrigerator</data>
+    </node>
+    <node id="ifc_1kRPPrPK11_IfcBuildingElementProxy">
+      <data key="d3">ifc</data>
+      <data key="d13">IfcBuildingElementProxy</data>
+      <data key="d14">1kRPPrPK119PBys6QizW2g</data>
+      <data key="d4">Model Text</data>
+      <data key="d15">structural</data>
+      <data key="d5">[4.139216019970392, -7.494772336981441, 0.075]</data>
+      <data key="d6">4.139216019970392</data>
+      <data key="d7">-7.494772336981441</data>
+      <data key="d8">0.075</data>
+      <data key="d16">[-1.341931402567667, -7.890319058195529, 0.0]</data>
+      <data key="d17">[9.62036344250845, -7.099225615767354, 0.15]</data>
+      <data key="d11">ifc</data>
+      <data key="d12">IfcBuildingElementProxy: Model Text</data>
+    </node>
+    <node id="ifc_2DedXznHnD_IfcDoor">
+      <data key="d3">ifc</data>
+      <data key="d13">IfcDoor</data>
+      <data key="d14">2DedXznHnDaeAWsrTB_q9D</data>
+      <data key="d4">Innerdörr - standard</data>
+      <data key="d15">portal</data>
+      <data key="d5">[6.95899382595973, 0.549180652373813, 1.055]</data>
+      <data key="d6">6.95899382595973</data>
+      <data key="d7">0.549180652373813</data>
+      <data key="d8">1.055</data>
+      <data key="d16">[6.50399382595973, 0.431680652373813, 0.0]</data>
+      <data key="d17">[7.41399382595973, 0.666680652373813, 2.11]</data>
+      <data key="d11">ifc</data>
+      <data key="d12">IfcDoor: Innerdörr - standard</data>
+    </node>
+    <node id="ifc_1yETHMphv6_IfcSlab">
+      <data key="d3">ifc</data>
+      <data key="d13">IfcSlab</data>
+      <data key="d14">1yETHMphv6LwABqR4Pbs5g</data>
+      <data key="d4">Basic Roof</data>
+      <data key="d15">structural</data>
+      <data key="d5">[3.708993825959679, -2.683319347626221, 2.9369372648572476]</data>
+      <data key="d6">3.708993825959679</data>
+      <data key="d7">-2.683319347626221</data>
+      <data key="d8">2.9369372648572476</data>
+      <data key="d16">[-8.191006174040274, -5.3583193476262245, 2.2504031982940895]</data>
+      <data key="d17">[15.608993825959631, -0.008319347626218221, 3.623471331420406]</data>
+      <data key="d11">ifc</data>
+      <data key="d12">IfcSlab: Basic Roof</data>
+    </node>
+    <node id="ifc_1kRPPrPK11_IfcSlab">
+      <data key="d3">ifc</data>
+      <data key="d13">IfcSlab</data>
+      <data key="d14">1kRPPrPK119PBys6QizWFs</data>
+      <data key="d4">Floor</data>
+      <data key="d15">structural</data>
+      <data key="d5">[3.7089938259596806, -0.008319347626181361, -0.1499]</data>
+      <data key="d6">3.7089938259596806</data>
+      <data key="d7">-0.008319347626181361</data>
+      <data key="d8">-0.1499</data>
+      <data key="d16">[-7.59100617404027, -4.758319347626181, -0.2999]</data>
+      <data key="d17">[15.008993825959632, 4.741680652373819, 0.000100000000000011]</data>
+      <data key="d11">ifc</data>
+      <data key="d12">IfcSlab: Floor</data>
+    </node>
+    <node id="ifc_2DedXznHnD_IfcWallStandardCase">
+      <data key="d3">ifc</data>
+      <data key="d13">IfcWallStandardCase</data>
+      <data key="d14">2DedXznHnDaeAWsrTB_rm$</data>
+      <data key="d4">Basic Wall</data>
+      <data key="d15">structural</data>
+      <data key="d5">[3.8739938259597198, 1.1416806523738101, 1.2]</data>
+      <data key="d6">3.8739938259597198</data>
+      <data key="d7">1.1416806523738101</data>
+      <data key="d8">1.2</data>
+      <data key="d16">[1.93399382595971, 1.05668065237381, 0.0]</data>
+      <data key="d17">[5.81399382595973, 1.22668065237381, 2.4]</data>
+      <data key="d11">ifc</data>
+      <data key="d12">IfcWallStandardCase: Basic Wall</data>
+    </node>
+    <node id="ifc_2DedXznHnD_IfcWindow">
+      <data key="d3">ifc</data>
+      <data key="d13">IfcWindow</data>
+      <data key="d14">2DedXznHnDaeAWsrTB_rvg</data>
+      <data key="d4">2-luft fast</data>
+      <data key="d15">portal</data>
+      <data key="d5">[6.7889938259597, 4.659680652373858, 1.645]</data>
+      <data key="d6">6.7889938259597</data>
+      <data key="d7">4.659680652373858</data>
+      <data key="d8">1.645</data>
+      <data key="d16">[6.2839938259597, 4.599680652373859, 1.1400000000000001]</data>
+      <data key="d17">[7.2939938259597, 4.7196806523738575, 2.15]</data>
+      <data key="d11">ifc</data>
+      <data key="d12">IfcWindow: 2-luft fast</data>
+    </node>
+    <node id="ifc_2DedXznHnD_IfcFlowTerminal">
+      <data key="d3">ifc</data>
+      <data key="d13">IfcFlowTerminal</data>
+      <data key="d14">2DedXznHnDaeAWsrTB_q9E</data>
+      <data key="d4">M_Lavatory - Vanity</data>
+      <data key="d15">furnishing</data>
+      <data key="d5">[4.72792975857222, 1.4810837773738332, 0.44132499999998104]</data>
+      <data key="d6">4.72792975857222</data>
+      <data key="d7">1.4810837773738332</data>
+      <data key="d8">0.44132499999998104</data>
+      <data key="d16">[4.34792975857222, 1.240486902373826, 0.0]</data>
+      <data key="d17">[5.10792975857222, 1.7216806523738402, 0.8826499999999621]</data>
+      <data key="d11">ifc</data>
+      <data key="d12">IfcFlowTerminal: M_Lavatory - Vanity</data>
+    </node>
+    <node id="ifc_2DedXznHnD_IfcOpeningElement">
+      <data key="d3">ifc</data>
+      <data key="d13">IfcOpeningElement</data>
+      <data key="d14">2DedXznHnDaeAWsqHB_q9D</data>
+      <data key="d4">Innerdörr - standard</data>
+      <data key="d15">portal</data>
+      <data key="d5">[6.95899382595973, 0.516680652373813, 1.055]</data>
+      <data key="d6">6.95899382595973</data>
+      <data key="d7">0.516680652373813</data>
+      <data key="d8">1.055</data>
+      <data key="d16">[6.50399382595973, 0.431680652373813, 0.0]</data>
+      <data key="d17">[7.41399382595973, 0.601680652373813, 2.11]</data>
+      <data key="d11">ifc</data>
+      <data key="d12">IfcOpeningElement: Innerdörr - standard</data>
+    </node>
+    <node id="ifc_3Om1uT2br8_IfcOpeningElement">
+      <data key="d3">ifc</data>
+      <data key="d13">IfcOpeningElement</data>
+      <data key="d14">3Om1uT2br8IfhnkkzrDZhX</data>
+      <data key="d4">M_Counter Top w Sink</data>
+      <data key="d15">portal</data>
+      <data key="d5">[-3.22100617404031, -2.7183193476261467, 0.8800000000000011]</data>
+      <data key="d6">-3.22100617404031</data>
+      <data key="d7">-2.7183193476261467</data>
+      <data key="d8">0.8800000000000011</data>
+      <data key="d16">[-3.428706174040318, -3.068519347626153, 0.86]</data>
+      <data key="d17">[-3.0133061740403027, -2.36811934762614, 0.9000000000000022]</data>
+      <data key="d11">ifc</data>
+      <data key="d12">IfcOpeningElement: M_Counter Top w Sink</data>
+    </node>
+    <node id="ifc_2DedXznHnD_IfcFurnishingElement">
+      <data key="d3">ifc</data>
+      <data key="d13">IfcFurnishingElement</data>
+      <data key="d14">2DedXznHnDaeAWsrTB_ryI</data>
+      <data key="d4">M_Entertainment center</data>
+      <data key="d15">furnishing</data>
+      <data key="d5">[13.553993825959601, 0.08009315237377795, 0.915]</data>
+      <data key="d6">13.553993825959601</data>
+      <data key="d7">0.08009315237377795</data>
+      <data key="d8">0.915</data>
+      <data key="d16">[12.6389938259596, -0.226494347626222, 0.0]</data>
+      <data key="d17">[14.4689938259596, 0.3866806523737779, 1.83]</data>
+      <data key="d11">ifc</data>
+      <data key="d12">IfcFurnishingElement: M_Entertainment center</data>
+    </node>
+    <node id="ifc_0lqEVHUQv4_IfcFurnishingElement">
+      <data key="d3">ifc</data>
+      <data key="d13">IfcFurnishingElement</data>
+      <data key="d14">0lqEVHUQv4qv$au00O_6Jk</data>
+      <data key="d4">M_Cabinet-File 2 Drawer</data>
+      <data key="d15">furnishing</data>
+      <data key="d5">[-5.8960061740402745, 3.9509556523738443, 0.367]</data>
+      <data key="d6">-5.8960061740402745</data>
+      <data key="d7">3.9509556523738443</data>
+      <data key="d8">0.367</data>
+      <data key="d16">[-6.0860061740402855, 3.700230652373846, 0.0]</data>
+      <data key="d17">[-5.7060061740402634, 4.201680652373843, 0.734]</data>
+      <data key="d11">ifc</data>
+      <data key="d12">IfcFurnishingElement: M_Cabinet-File 2 Drawer</data>
+    </node>
+    <node id="ifc_3UdjywU2L4_IfcSite">
+      <data key="d3">ifc</data>
+      <data key="d13">IfcSite</data>
+      <data key="d14">3UdjywU2L4v9tTcFvuqwGp</data>
+      <data key="d4">Surface</data>
+      <data key="d15">other</data>
+      <data key="d5">[3.9739179016112995, -1.6696573883056507, 0.0]</data>
+      <data key="d6">3.9739179016112995</data>
+      <data key="d7">-1.6696573883056507</data>
+      <data key="d8">0.0</data>
+      <data key="d16">[-20.4293553405762, -16.3181900024414, 0.0]</data>
+      <data key="d17">[28.3771911437988, 12.9788752258301, 0.0]</data>
+      <data key="d11">ifc</data>
+      <data key="d12">IfcSite: Surface</data>
+    </node>
+    <edge source="visual_0_dining_table" target="visual_22_chair">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">1.267</data>
+      <data key="d21">0.7891106146861471</data>
+    </edge>
+    <edge source="visual_0_dining_table" target="visual_24_chair">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">1.809</data>
+      <data key="d21">0.552780514373406</data>
+    </edge>
+    <edge source="visual_0_dining_table" target="visual_25_chair">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">1.835</data>
+      <data key="d21">0.5450562179478965</data>
+    </edge>
+    <edge source="visual_0_dining_table" target="ifc_1yETHMphv6_IfcSlab">
+      <data key="d18">contains</data>
+      <data key="d19">contains</data>
+      <data key="d22">IfcSlab</data>
+    </edge>
+    <edge source="visual_1_dining_table" target="visual_14_chair">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">0.65</data>
+      <data key="d21">1.538037271165205</data>
+    </edge>
+    <edge source="visual_1_dining_table" target="ifc_3UdjywU2L4_IfcSite">
+      <data key="d18">contains</data>
+      <data key="d19">contains</data>
+      <data key="d22">IfcSite</data>
+    </edge>
+    <edge source="visual_2_dining_table" target="visual_3_dining_table">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">1.977</data>
+      <data key="d21">0.5057335100325621</data>
+    </edge>
+    <edge source="visual_2_dining_table" target="ifc_1yETHMphv6_IfcSlab">
+      <data key="d18">contains</data>
+      <data key="d19">contains</data>
+      <data key="d22">IfcSlab</data>
+    </edge>
+    <edge source="visual_2_dining_table" target="ifc_2DedXznHnD_IfcDoor">
+      <data key="d18">near_portal</data>
+      <data key="d19">near_portal</data>
+      <data key="d20">2.364</data>
+      <data key="d23">IfcDoor</data>
+    </edge>
+    <edge source="visual_3_dining_table" target="ifc_1yETHMphv6_IfcSlab">
+      <data key="d18">contains</data>
+      <data key="d19">contains</data>
+      <data key="d22">IfcSlab</data>
+    </edge>
+    <edge source="visual_4_dining_table" target="visual_23_chair">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">1.431</data>
+      <data key="d21">0.698663101538392</data>
+    </edge>
+    <edge source="visual_4_dining_table" target="visual_27_chair">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">0.537</data>
+      <data key="d21">1.8638039374796485</data>
+    </edge>
+    <edge source="visual_4_dining_table" target="ifc_1yETHMphv6_IfcSlab">
+      <data key="d18">contains</data>
+      <data key="d19">contains</data>
+      <data key="d22">IfcSlab</data>
+    </edge>
+    <edge source="visual_5_dining_table" target="visual_16_chair">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">1.681</data>
+      <data key="d21">0.5949385449196377</data>
+    </edge>
+    <edge source="visual_5_dining_table" target="visual_28_chair">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">1.432</data>
+      <data key="d21">0.6981032430139481</data>
+    </edge>
+    <edge source="visual_5_dining_table" target="visual_29_chair">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">1.676</data>
+      <data key="d21">0.5968096612165694</data>
+    </edge>
+    <edge source="visual_5_dining_table" target="visual_33_couch">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">1.682</data>
+      <data key="d21">0.5946873785218765</data>
+    </edge>
+    <edge source="visual_5_dining_table" target="ifc_1yETHMphv6_IfcSlab">
+      <data key="d18">contains</data>
+      <data key="d19">contains</data>
+      <data key="d22">IfcSlab</data>
+    </edge>
+    <edge source="visual_5_dining_table" target="ifc_2DedXznHnD_IfcDoor">
+      <data key="d18">near_portal</data>
+      <data key="d19">near_portal</data>
+      <data key="d20">2.737</data>
+      <data key="d23">IfcDoor</data>
+    </edge>
+    <edge source="visual_6_dining_table" target="visual_7_dining_table">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">1.323</data>
+      <data key="d21">0.7557293657660191</data>
+    </edge>
+    <edge source="visual_6_dining_table" target="visual_13_dining_table">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">1.195</data>
+      <data key="d21">0.836475471342222</data>
+    </edge>
+    <edge source="visual_6_dining_table" target="visual_19_chair">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">1.054</data>
+      <data key="d21">0.948609894237746</data>
+    </edge>
+    <edge source="visual_6_dining_table" target="visual_31_chair">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">1.462</data>
+      <data key="d21">0.6838667678035629</data>
+    </edge>
+    <edge source="visual_6_dining_table" target="visual_32_chair">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">1.277</data>
+      <data key="d21">0.7833459372149488</data>
+    </edge>
+    <edge source="visual_6_dining_table" target="visual_34_bed">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">1.592</data>
+      <data key="d21">0.6280270003044758</data>
+    </edge>
+    <edge source="visual_6_dining_table" target="ifc_1yETHMphv6_IfcSlab">
+      <data key="d18">contains</data>
+      <data key="d19">contains</data>
+      <data key="d22">IfcSlab</data>
+    </edge>
+    <edge source="visual_7_dining_table" target="visual_13_dining_table">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">1.313</data>
+      <data key="d21">0.7617733888539724</data>
+    </edge>
+    <edge source="visual_7_dining_table" target="visual_19_chair">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">1.917</data>
+      <data key="d21">0.5217125999670532</data>
+    </edge>
+    <edge source="visual_7_dining_table" target="visual_20_chair">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">1.585</data>
+      <data key="d21">0.6310891995492759</data>
+    </edge>
+    <edge source="visual_7_dining_table" target="visual_31_chair">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">1.346</data>
+      <data key="d21">0.7427888545855812</data>
+    </edge>
+    <edge source="visual_7_dining_table" target="visual_34_bed">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">1.715</data>
+      <data key="d21">0.5831386315592707</data>
+    </edge>
+    <edge source="visual_7_dining_table" target="ifc_1yETHMphv6_IfcSlab">
+      <data key="d18">contains</data>
+      <data key="d19">contains</data>
+      <data key="d22">IfcSlab</data>
+    </edge>
+    <edge source="visual_8_dining_table" target="visual_11_dining_table">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">0.529</data>
+      <data key="d21">1.8894988250239728</data>
+    </edge>
+    <edge source="visual_8_dining_table" target="visual_12_dining_table">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">1.884</data>
+      <data key="d21">0.5308542648313731</data>
+    </edge>
+    <edge source="visual_8_dining_table" target="visual_19_chair">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">1.964</data>
+      <data key="d21">0.5091087723573061</data>
+    </edge>
+    <edge source="visual_8_dining_table" target="visual_32_chair">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">1.832</data>
+      <data key="d21">0.5458762661356591</data>
+    </edge>
+    <edge source="visual_8_dining_table" target="ifc_1yETHMphv6_IfcSlab">
+      <data key="d18">contains</data>
+      <data key="d19">contains</data>
+      <data key="d22">IfcSlab</data>
+    </edge>
+    <edge source="visual_9_dining_table" target="ifc_3UdjywU2L4_IfcSite">
+      <data key="d18">contains</data>
+      <data key="d19">contains</data>
+      <data key="d22">IfcSite</data>
+    </edge>
+    <edge source="visual_10_dining_table" target="ifc_1yETHMphv6_IfcSlab">
+      <data key="d18">contains</data>
+      <data key="d19">contains</data>
+      <data key="d22">IfcSlab</data>
+    </edge>
+    <edge source="visual_11_dining_table" target="visual_32_chair">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">1.713</data>
+      <data key="d21">0.5836944256407699</data>
+    </edge>
+    <edge source="visual_11_dining_table" target="ifc_1yETHMphv6_IfcSlab">
+      <data key="d18">contains</data>
+      <data key="d19">contains</data>
+      <data key="d22">IfcSlab</data>
+    </edge>
+    <edge source="visual_12_dining_table" target="ifc_1yETHMphv6_IfcSlab">
+      <data key="d18">contains</data>
+      <data key="d19">contains</data>
+      <data key="d22">IfcSlab</data>
+    </edge>
+    <edge source="visual_13_dining_table" target="visual_31_chair">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">1.322</data>
+      <data key="d21">0.7563479410013783</data>
+    </edge>
+    <edge source="visual_13_dining_table" target="visual_32_chair">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">1.795</data>
+      <data key="d21">0.5569713691457514</data>
+    </edge>
+    <edge source="visual_13_dining_table" target="ifc_1yETHMphv6_IfcSlab">
+      <data key="d18">contains</data>
+      <data key="d19">contains</data>
+      <data key="d22">IfcSlab</data>
+    </edge>
+    <edge source="visual_14_chair" target="ifc_3UdjywU2L4_IfcSite">
+      <data key="d18">contains</data>
+      <data key="d19">contains</data>
+      <data key="d22">IfcSite</data>
+    </edge>
+    <edge source="visual_15_chair" target="ifc_1yETHMphv6_IfcSlab">
+      <data key="d18">contains</data>
+      <data key="d19">contains</data>
+      <data key="d22">IfcSlab</data>
+    </edge>
+    <edge source="visual_15_chair" target="ifc_2DedXznHnD_IfcWindow">
+      <data key="d18">near_portal</data>
+      <data key="d19">near_portal</data>
+      <data key="d20">2.847</data>
+      <data key="d23">IfcWindow</data>
+    </edge>
+    <edge source="visual_16_chair" target="visual_29_chair">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">0.928</data>
+      <data key="d21">1.0775378331221777</data>
+    </edge>
+    <edge source="visual_16_chair" target="visual_33_couch">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">0.002</data>
+      <data key="d21">500.08684715609894</data>
+    </edge>
+    <edge source="visual_16_chair" target="ifc_1yETHMphv6_IfcSlab">
+      <data key="d18">contains</data>
+      <data key="d19">contains</data>
+      <data key="d22">IfcSlab</data>
+    </edge>
+    <edge source="visual_17_chair" target="ifc_1yETHMphv6_IfcSlab">
+      <data key="d18">contains</data>
+      <data key="d19">contains</data>
+      <data key="d22">IfcSlab</data>
+    </edge>
+    <edge source="visual_17_chair" target="ifc_2DedXznHnD_IfcDoor">
+      <data key="d18">near_portal</data>
+      <data key="d19">near_portal</data>
+      <data key="d20">2.546</data>
+      <data key="d23">IfcDoor</data>
+    </edge>
+    <edge source="visual_18_chair" target="visual_32_chair">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">1.961</data>
+      <data key="d21">0.5098618832419983</data>
+    </edge>
+    <edge source="visual_18_chair" target="ifc_1yETHMphv6_IfcSlab">
+      <data key="d18">contains</data>
+      <data key="d19">contains</data>
+      <data key="d22">IfcSlab</data>
+    </edge>
+    <edge source="visual_18_chair" target="ifc_2DedXznHnD_IfcWindow">
+      <data key="d18">near_portal</data>
+      <data key="d19">near_portal</data>
+      <data key="d20">2.78</data>
+      <data key="d23">IfcWindow</data>
+    </edge>
+    <edge source="visual_19_chair" target="ifc_1yETHMphv6_IfcSlab">
+      <data key="d18">contains</data>
+      <data key="d19">contains</data>
+      <data key="d22">IfcSlab</data>
+    </edge>
+    <edge source="visual_19_chair" target="ifc_2DedXznHnD_IfcDoor">
+      <data key="d18">near_portal</data>
+      <data key="d19">near_portal</data>
+      <data key="d20">2.113</data>
+      <data key="d23">IfcDoor</data>
+    </edge>
+    <edge source="visual_20_chair" target="visual_28_chair">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">1.812</data>
+      <data key="d21">0.5518891405001949</data>
+    </edge>
+    <edge source="visual_20_chair" target="visual_31_chair">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">1.673</data>
+      <data key="d21">0.5977182065262046</data>
+    </edge>
+    <edge source="visual_20_chair" target="visual_34_bed">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">1.838</data>
+      <data key="d21">0.5440218484959062</data>
+    </edge>
+    <edge source="visual_20_chair" target="ifc_1yETHMphv6_IfcSlab">
+      <data key="d18">contains</data>
+      <data key="d19">contains</data>
+      <data key="d22">IfcSlab</data>
+    </edge>
+    <edge source="visual_20_chair" target="ifc_2DedXznHnD_IfcDoor">
+      <data key="d18">near_portal</data>
+      <data key="d19">near_portal</data>
+      <data key="d20">2.626</data>
+      <data key="d23">IfcDoor</data>
+    </edge>
+    <edge source="visual_20_chair" target="ifc_2DedXznHnD_IfcWindow">
+      <data key="d18">near_portal</data>
+      <data key="d19">near_portal</data>
+      <data key="d20">2.924</data>
+      <data key="d23">IfcWindow</data>
+    </edge>
+    <edge source="visual_21_chair" target="visual_24_chair">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">0.951</data>
+      <data key="d21">1.051630056879464</data>
+    </edge>
+    <edge source="visual_21_chair" target="visual_26_chair">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">1.879</data>
+      <data key="d21">0.5321553956997089</data>
+    </edge>
+    <edge source="visual_21_chair" target="ifc_1yETHMphv6_IfcSlab">
+      <data key="d18">contains</data>
+      <data key="d19">contains</data>
+      <data key="d22">IfcSlab</data>
+    </edge>
+    <edge source="visual_22_chair" target="visual_23_chair">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">1.174</data>
+      <data key="d21">0.8520974118078269</data>
+    </edge>
+    <edge source="visual_22_chair" target="visual_25_chair">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">0.778</data>
+      <data key="d21">1.2861113154525874</data>
+    </edge>
+    <edge source="visual_22_chair" target="visual_27_chair">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">1.938</data>
+      <data key="d21">0.5161155358722501</data>
+    </edge>
+    <edge source="visual_22_chair" target="ifc_1yETHMphv6_IfcSlab">
+      <data key="d18">contains</data>
+      <data key="d19">contains</data>
+      <data key="d22">IfcSlab</data>
+    </edge>
+    <edge source="visual_23_chair" target="visual_25_chair">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">0.764</data>
+      <data key="d21">1.3081430719116824</data>
+    </edge>
+    <edge source="visual_23_chair" target="visual_27_chair">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">1.008</data>
+      <data key="d21">0.9922509006415953</data>
+    </edge>
+    <edge source="visual_23_chair" target="ifc_1yETHMphv6_IfcSlab">
+      <data key="d18">contains</data>
+      <data key="d19">contains</data>
+      <data key="d22">IfcSlab</data>
+    </edge>
+    <edge source="visual_24_chair" target="ifc_1yETHMphv6_IfcSlab">
+      <data key="d18">contains</data>
+      <data key="d19">contains</data>
+      <data key="d22">IfcSlab</data>
+    </edge>
+    <edge source="visual_25_chair" target="visual_27_chair">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">1.759</data>
+      <data key="d21">0.5685103195481181</data>
+    </edge>
+    <edge source="visual_25_chair" target="ifc_1yETHMphv6_IfcSlab">
+      <data key="d18">contains</data>
+      <data key="d19">contains</data>
+      <data key="d22">IfcSlab</data>
+    </edge>
+    <edge source="visual_26_chair" target="ifc_1yETHMphv6_IfcSlab">
+      <data key="d18">contains</data>
+      <data key="d19">contains</data>
+      <data key="d22">IfcSlab</data>
+    </edge>
+    <edge source="visual_27_chair" target="ifc_1yETHMphv6_IfcSlab">
+      <data key="d18">contains</data>
+      <data key="d19">contains</data>
+      <data key="d22">IfcSlab</data>
+    </edge>
+    <edge source="visual_28_chair" target="ifc_1yETHMphv6_IfcSlab">
+      <data key="d18">contains</data>
+      <data key="d19">contains</data>
+      <data key="d22">IfcSlab</data>
+    </edge>
+    <edge source="visual_28_chair" target="ifc_2DedXznHnD_IfcDoor">
+      <data key="d18">near_portal</data>
+      <data key="d19">near_portal</data>
+      <data key="d20">2.931</data>
+      <data key="d23">IfcDoor</data>
+    </edge>
+    <edge source="visual_29_chair" target="visual_33_couch">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">0.927</data>
+      <data key="d21">1.0782484286153762</data>
+    </edge>
+    <edge source="visual_29_chair" target="ifc_1yETHMphv6_IfcSlab">
+      <data key="d18">contains</data>
+      <data key="d19">contains</data>
+      <data key="d22">IfcSlab</data>
+    </edge>
+    <edge source="visual_30_chair" target="ifc_1yETHMphv6_IfcSlab">
+      <data key="d18">contains</data>
+      <data key="d19">contains</data>
+      <data key="d22">IfcSlab</data>
+    </edge>
+    <edge source="visual_31_chair" target="visual_32_chair">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">1.427</data>
+      <data key="d21">0.7007729359379826</data>
+    </edge>
+    <edge source="visual_31_chair" target="visual_34_bed">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">1.212</data>
+      <data key="d21">0.8253675459572397</data>
+    </edge>
+    <edge source="visual_31_chair" target="ifc_1yETHMphv6_IfcSlab">
+      <data key="d18">contains</data>
+      <data key="d19">contains</data>
+      <data key="d22">IfcSlab</data>
+    </edge>
+    <edge source="visual_32_chair" target="visual_34_bed">
+      <data key="d18">proximity</data>
+      <data key="d19">near</data>
+      <data key="d20">1.508</data>
+      <data key="d21">0.6630420780910672</data>
+    </edge>
+    <edge source="visual_32_chair" target="ifc_1yETHMphv6_IfcSlab">
+      <data key="d18">contains</data>
+      <data key="d19">contains</data>
+      <data key="d22">IfcSlab</data>
+    </edge>
+    <edge source="visual_33_couch" target="ifc_1yETHMphv6_IfcSlab">
+      <data key="d18">contains</data>
+      <data key="d19">contains</data>
+      <data key="d22">IfcSlab</data>
+    </edge>
+    <edge source="visual_34_bed" target="ifc_1yETHMphv6_IfcSlab">
+      <data key="d18">contains</data>
+      <data key="d19">contains</data>
+      <data key="d22">IfcSlab</data>
+    </edge>
+    <edge source="visual_34_bed" target="ifc_2DedXznHnD_IfcWindow">
+      <data key="d18">near_portal</data>
+      <data key="d19">near_portal</data>
+      <data key="d20">2.702</data>
+      <data key="d23">IfcWindow</data>
+    </edge>
+    <data key="d0">RGB-D Scene Graph with BIM Priors</data>
+    <data key="d1">2.0</data>
+    <data key="d2">0.5</data>
+  </graph>
+</graphml>

@@ -1,0 +1,1369 @@
+{
+  "total_nodes": 115,
+  "total_edges": 11,
+  "node_types": {
+    "visual": 21,
+    "ifc": 94
+  },
+  "edge_types": {
+    "proximity": 9,
+    "contains": 2
+  },
+  "visual_classes": {
+    "sink": 1,
+    "dining table": 12,
+    "toilet": 1,
+    "tv": 2,
+    "potted plant": 1,
+    "chair": 1,
+    "mouse": 1,
+    "knife": 1,
+    "book": 1
+  },
+  "nodes": [
+    {
+      "id": "visual_0_sink",
+      "node_type": "visual",
+      "class_name": "sink",
+      "position": [
+        -0.147,
+        10.419,
+        -11.008
+      ],
+      "source": "yolov8m"
+    },
+    {
+      "id": "visual_1_dining_table",
+      "node_type": "visual",
+      "class_name": "dining table",
+      "position": [
+        -0.098,
+        11.491,
+        -10.289
+      ],
+      "source": "yolov8m"
+    },
+    {
+      "id": "visual_2_dining_table",
+      "node_type": "visual",
+      "class_name": "dining table",
+      "position": [
+        2.671,
+        13.321,
+        -9.037
+      ],
+      "source": "yolov8m"
+    },
+    {
+      "id": "visual_3_dining_table",
+      "node_type": "visual",
+      "class_name": "dining table",
+      "position": [
+        2.647,
+        13.106,
+        -10.183
+      ],
+      "source": "yolov8m"
+    },
+    {
+      "id": "visual_4_dining_table",
+      "node_type": "visual",
+      "class_name": "dining table",
+      "position": [
+        2.446,
+        16.599,
+        -10.474
+      ],
+      "source": "yolov8m"
+    },
+    {
+      "id": "visual_5_dining_table",
+      "node_type": "visual",
+      "class_name": "dining table",
+      "position": [
+        14.334,
+        14.178,
+        -8.992
+      ],
+      "source": "yolov8m"
+    },
+    {
+      "id": "visual_6_dining_table",
+      "node_type": "visual",
+      "class_name": "dining table",
+      "position": [
+        13.263,
+        9.445,
+        -9.396
+      ],
+      "source": "yolov8m"
+    },
+    {
+      "id": "visual_7_dining_table",
+      "node_type": "visual",
+      "class_name": "dining table",
+      "position": [
+        14.183,
+        8.436,
+        -9.218
+      ],
+      "source": "yolov8m"
+    },
+    {
+      "id": "visual_8_dining_table",
+      "node_type": "visual",
+      "class_name": "dining table",
+      "position": [
+        14.192,
+        8.512,
+        -1.998
+      ],
+      "source": "yolov8m"
+    },
+    {
+      "id": "visual_9_dining_table",
+      "node_type": "visual",
+      "class_name": "dining table",
+      "position": [
+        13.063,
+        13.33,
+        -2.094
+      ],
+      "source": "yolov8m"
+    },
+    {
+      "id": "visual_10_dining_table",
+      "node_type": "visual",
+      "class_name": "dining table",
+      "position": [
+        4.932,
+        12.447,
+        -3.089
+      ],
+      "source": "yolov8m"
+    },
+    {
+      "id": "visual_11_dining_table",
+      "node_type": "visual",
+      "class_name": "dining table",
+      "position": [
+        4.688,
+        8.803,
+        -3.168
+      ],
+      "source": "yolov8m"
+    },
+    {
+      "id": "visual_12_dining_table",
+      "node_type": "visual",
+      "class_name": "dining table",
+      "position": [
+        12.473,
+        14.162,
+        -2.185
+      ],
+      "source": "yolov8m"
+    },
+    {
+      "id": "visual_13_toilet",
+      "node_type": "visual",
+      "class_name": "toilet",
+      "position": [
+        2.472,
+        13.861,
+        -10.234
+      ],
+      "source": "yolov8m"
+    },
+    {
+      "id": "visual_14_tv",
+      "node_type": "visual",
+      "class_name": "tv",
+      "position": [
+        4.069,
+        12.105,
+        -10.273
+      ],
+      "source": "yolov8m"
+    },
+    {
+      "id": "visual_15_tv",
+      "node_type": "visual",
+      "class_name": "tv",
+      "position": [
+        2.942,
+        0.881,
+        -5.393
+      ],
+      "source": "yolov8m"
+    },
+    {
+      "id": "visual_16_potted_plant",
+      "node_type": "visual",
+      "class_name": "potted plant",
+      "position": [
+        12.661,
+        -4.157,
+        -3.781
+      ],
+      "source": "yolov8m"
+    },
+    {
+      "id": "visual_17_chair",
+      "node_type": "visual",
+      "class_name": "chair",
+      "position": [
+        13.109,
+        7.884,
+        -2.322
+      ],
+      "source": "yolov8m"
+    },
+    {
+      "id": "visual_18_mouse",
+      "node_type": "visual",
+      "class_name": "mouse",
+      "position": [
+        4.613,
+        13.209,
+        -5.388
+      ],
+      "source": "yolov8m"
+    },
+    {
+      "id": "visual_19_knife",
+      "node_type": "visual",
+      "class_name": "knife",
+      "position": [
+        3.401,
+        7.085,
+        -4.829
+      ],
+      "source": "yolov8m"
+    },
+    {
+      "id": "visual_20_book",
+      "node_type": "visual",
+      "class_name": "book",
+      "position": [
+        3.401,
+        7.085,
+        -4.829
+      ],
+      "source": "yolov8m"
+    },
+    {
+      "id": "ifc_2aLvfwKBD4_IfcBuildingElementProxy",
+      "node_type": "ifc",
+      "class_name": "Wall Sweep",
+      "position": [
+        8.982,
+        -19.308,
+        6.015
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_1bO$w5ddH9_IfcBuildingElementProxy",
+      "node_type": "ifc",
+      "class_name": "Mass 3",
+      "position": [
+        28.428,
+        0.118,
+        10.882
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_2gN7cgIEfE_IfcBuildingElementProxy",
+      "node_type": "ifc",
+      "class_name": "Arched vault 1",
+      "position": [
+        11.914,
+        -17.098,
+        10.819
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_3L2hZu9KT9_IfcBuildingElementProxy",
+      "node_type": "ifc",
+      "class_name": "Mass 4",
+      "position": [
+        19.407,
+        -6.951,
+        4.849
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_3Mp47giub9_IfcBuildingElementProxy",
+      "node_type": "ifc",
+      "class_name": "Wall Sweep",
+      "position": [
+        1.992,
+        -7.484,
+        11.405
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_1bGy$Qda52_IfcColumn",
+      "node_type": "ifc",
+      "class_name": "Columns-Digger_Specialties-Square_Smooth(3)rfa",
+      "position": [
+        5.922,
+        -12.384,
+        4.7
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_1MgiKuwz5D_IfcColumn",
+      "node_type": "ifc",
+      "class_name": "Columns-Digger_Specialties-Square_Smooth(3)rfa",
+      "position": [
+        12.244,
+        -12.344,
+        4.7
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_0J3vfD0Gz3_IfcColumn",
+      "node_type": "ifc",
+      "class_name": "Columns-Digger_Specialties-Square_Smooth",
+      "position": [
+        5.891,
+        3.096,
+        6.38
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_0_Fq7dyIH1_IfcColumn",
+      "node_type": "ifc",
+      "class_name": "Columns-Digger_Specialties-Square_Smooth(2)rfa",
+      "position": [
+        -1.551,
+        19.661,
+        5.15
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_0RzCT452L8_IfcColumn",
+      "node_type": "ifc",
+      "class_name": "Columns-Digger_Specialties-Square_Smooth(3)rfa",
+      "position": [
+        13.99,
+        28.679,
+        4.7
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_29zIBUQ9f7_IfcColumn",
+      "node_type": "ifc",
+      "class_name": "Columns-Digger_Specialties-Square_Smooth(2)rfa",
+      "position": [
+        3.031,
+        -15.704,
+        5.15
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_0CW5T1HsDE_IfcColumn",
+      "node_type": "ifc",
+      "class_name": "M_Concrete-Round-Column",
+      "position": [
+        13.976,
+        -17.213,
+        2.915
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_2PrNXZDVjE_IfcCovering",
+      "node_type": "ifc",
+      "class_name": "Arch 2",
+      "position": [
+        4.227,
+        -12.337,
+        5.15
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_2mC46RZvTB_IfcCovering",
+      "node_type": "ifc",
+      "class_name": "Arch 23",
+      "position": [
+        13.727,
+        -15.537,
+        9.93
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_0PLsBZ_E15_IfcDoor",
+      "node_type": "ifc",
+      "class_name": "Double Shutter-Arch",
+      "position": [
+        11.081,
+        -18.588,
+        2.792
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_3zZFI3bvP8_IfcDoor",
+      "node_type": "ifc",
+      "class_name": "Double Shutter-Arch",
+      "position": [
+        9.081,
+        -18.588,
+        2.792
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_3KnxPrxOP1_IfcDoor",
+      "node_type": "ifc",
+      "class_name": "Double Shutter-Arch",
+      "position": [
+        5.876,
+        -16.955,
+        1.35
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_0XZcUfxcj7_IfcDoor",
+      "node_type": "ifc",
+      "class_name": "Double Shutter-Arch",
+      "position": [
+        6.969,
+        -18.588,
+        2.792
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_1cEVd$vrfE_IfcRoof",
+      "node_type": "ifc",
+      "class_name": "Basic Roof",
+      "position": [
+        14.487,
+        -13.907,
+        4.785
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_2vU60l_7P2_IfcRoof",
+      "node_type": "ifc",
+      "class_name": "Basic Roof",
+      "position": [
+        14.571,
+        1.917,
+        4.785
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_3ymPT$dWz5_IfcRoof",
+      "node_type": "ifc",
+      "class_name": "Basic Roof",
+      "position": [
+        3.631,
+        1.906,
+        4.799
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_0XZcUfxcj7_IfcRoof",
+      "node_type": "ifc",
+      "class_name": "Basic Roof",
+      "position": [
+        13.797,
+        -13.921,
+        4.878
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_3Ns6tBDvf3_IfcRoof",
+      "node_type": "ifc",
+      "class_name": "Basic Roof",
+      "position": [
+        4.353,
+        1.979,
+        9.658
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_0WQhE_xar1_IfcRoof",
+      "node_type": "ifc",
+      "class_name": "Basic Roof",
+      "position": [
+        10.54,
+        35.619,
+        4.878
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_1bO$w5ddH9_IfcRoof",
+      "node_type": "ifc",
+      "class_name": "Basic Roof",
+      "position": [
+        -49.231,
+        -0.043,
+        10.707
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_0Wr4DnTsL6_IfcRoof",
+      "node_type": "ifc",
+      "class_name": "Basic Roof",
+      "position": [
+        9.128,
+        0.314,
+        10.882
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_2gN7cgIEfE_IfcRoof",
+      "node_type": "ifc",
+      "class_name": "Basic Roof",
+      "position": [
+        9.042,
+        -16.965,
+        12.063
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_29zIBUQ9f7_IfcRoof",
+      "node_type": "ifc",
+      "class_name": "Basic Roof",
+      "position": [
+        13.8,
+        -17.161,
+        9.658
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_3L2hZu9KT9_IfcRoof",
+      "node_type": "ifc",
+      "class_name": "Basic Roof",
+      "position": [
+        9.119,
+        -16.503,
+        4.785
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_04VTPQ0R1F_IfcRoof",
+      "node_type": "ifc",
+      "class_name": "Basic Roof",
+      "position": [
+        6.952,
+        -16.481,
+        4.785
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_0PLsBZ_E15_IfcSlab",
+      "node_type": "ifc",
+      "class_name": "Basic Roof",
+      "position": [
+        12.69,
+        -7.52,
+        13.68
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_2mBYslRorE_IfcSlab",
+      "node_type": "ifc",
+      "class_name": "Floor",
+      "position": [
+        4.207,
+        -7.63,
+        10.6
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_2Sjqhk3EKW_IfcSlab",
+      "node_type": "ifc",
+      "class_name": "Floor",
+      "position": [
+        13.892,
+        -7.634,
+        10.6
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_3KnxPrxOP1_IfcSlab",
+      "node_type": "ifc",
+      "class_name": "Floor",
+      "position": [
+        9.117,
+        -17.225,
+        5.84
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_2SmYWbDgXt_IfcSlab",
+      "node_type": "ifc",
+      "class_name": "Floor",
+      "position": [
+        4.272,
+        2.084,
+        0.58
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_0WQhE_xar1_IfcSlab",
+      "node_type": "ifc",
+      "class_name": "Floor",
+      "position": [
+        9.07,
+        -7.634,
+        12.65
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_3VkXMarS1F_IfcSlab",
+      "node_type": "ifc",
+      "class_name": "Floor",
+      "position": [
+        9.11,
+        -13.783,
+        3.985
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_0ritD9eD54_IfcStairFlight",
+      "node_type": "ifc",
+      "class_name": "Cast-In-Place Stair",
+      "position": [
+        11.086,
+        -18.388,
+        -0.197
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_3KnxPrxOP1_IfcStairFlight",
+      "node_type": "ifc",
+      "class_name": "Cast-In-Place Stair",
+      "position": [
+        11.179,
+        0.415,
+        0.295
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_0pnCvtmVH5_IfcStairFlight",
+      "node_type": "ifc",
+      "class_name": "Precast Stair",
+      "position": [
+        4.185,
+        -17.224,
+        2.904
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_3Yk6lT1tX5_IfcStairFlight",
+      "node_type": "ifc",
+      "class_name": "Precast Stair",
+      "position": [
+        13.969,
+        -17.224,
+        2.904
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_3VkXMarS1F_IfcStairFlight",
+      "node_type": "ifc",
+      "class_name": "Cast-In-Place Stair",
+      "position": [
+        6.439,
+        -14.753,
+        4.957
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_1abTnSvBf9_IfcWall",
+      "node_type": "ifc",
+      "class_name": "Basic Wall",
+      "position": [
+        8.636,
+        -18.858,
+        7.872
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_2aLvfwKBD4_IfcWall",
+      "node_type": "ifc",
+      "class_name": "Walls 1",
+      "position": [
+        8.974,
+        -19.293,
+        2.984
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_3zZFI3bvP8_IfcWall",
+      "node_type": "ifc",
+      "class_name": "Walls ledge",
+      "position": [
+        9.046,
+        -19.218,
+        7.693
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_0hbup8D3HB_IfcWall",
+      "node_type": "ifc",
+      "class_name": "Walls ledge- lateral facade1",
+      "position": [
+        2.012,
+        -7.435,
+        5.655
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_3w5Q82KDHA_IfcWall",
+      "node_type": "ifc",
+      "class_name": "Basic Wall",
+      "position": [
+        5.896,
+        -6.002,
+        5.442
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_26gP4Mqe1F_IfcWall",
+      "node_type": "ifc",
+      "class_name": "Basic Wall",
+      "position": [
+        5.936,
+        -7.857,
+        10.278
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_12zdThFLv3_IfcWall",
+      "node_type": "ifc",
+      "class_name": "Basic Wall",
+      "position": [
+        12.209,
+        -7.857,
+        10.432
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_0_Fq7dyIH1_IfcWall",
+      "node_type": "ifc",
+      "class_name": "Walls ledge- lateral facade2",
+      "position": [
+        16.101,
+        -7.435,
+        5.655
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_04VTPQ0R1F_IfcWall",
+      "node_type": "ifc",
+      "class_name": "Basic Wall",
+      "position": [
+        8.049,
+        -17.22,
+        2.915
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_1abTnSvBf9_IfcWallStandardCase",
+      "node_type": "ifc",
+      "class_name": "Basic Wall",
+      "position": [
+        9.046,
+        3.739,
+        7.872
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_0ritD9eD54_IfcWallStandardCase",
+      "node_type": "ifc",
+      "class_name": "Basic Wall",
+      "position": [
+        8.99,
+        -18.588,
+        2.915
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_3KnxPrxOP1_IfcWallStandardCase",
+      "node_type": "ifc",
+      "class_name": "Basic Wall",
+      "position": [
+        10.569,
+        -0.035,
+        0.195
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_0Wr4DnTsL6_IfcWallStandardCase",
+      "node_type": "ifc",
+      "class_name": "Basic Wall",
+      "position": [
+        9.102,
+        1.252,
+        5.24
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_3VkXMarS1F_IfcWallStandardCase",
+      "node_type": "ifc",
+      "class_name": "Basic Wall",
+      "position": [
+        9.08,
+        -12.123,
+        4.638
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_1abTnSvBf9_IfcWindow",
+      "node_type": "ifc",
+      "class_name": "Arched (1)",
+      "position": [
+        15.624,
+        -1.098,
+        8.993
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_3zZFI3bvP8_IfcWindow",
+      "node_type": "ifc",
+      "class_name": "Arched (1)",
+      "position": [
+        13.931,
+        -18.864,
+        9.038
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_0hbup8D3HB_IfcWindow",
+      "node_type": "ifc",
+      "class_name": "009_Round_with_Trim_-_Sunburst",
+      "position": [
+        9.164,
+        3.742,
+        9.901
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_3Mp47giub9_IfcWindow",
+      "node_type": "ifc",
+      "class_name": "Ledge 4",
+      "position": [
+        2.012,
+        -7.518,
+        6.078
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_0jywQnewjX_IfcOpeningElement",
+      "node_type": "ifc",
+      "class_name": "Basic Wall",
+      "position": [
+        9.119,
+        -15.593,
+        1.816
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_3gfEovFVlo_IfcOpeningElement",
+      "node_type": "ifc",
+      "class_name": "Arched (1)",
+      "position": [
+        15.631,
+        -13.998,
+        8.993
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_2hqoGdqB9K_IfcOpeningElement",
+      "node_type": "ifc",
+      "class_name": "Arched (1)",
+      "position": [
+        15.631,
+        -10.638,
+        8.993
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_1zvzq_ThrY_IfcOpeningElement",
+      "node_type": "ifc",
+      "class_name": "Arched (1)",
+      "position": [
+        15.631,
+        -7.598,
+        8.993
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_0R07IUg4$c_IfcOpeningElement",
+      "node_type": "ifc",
+      "class_name": "Arched (1)",
+      "position": [
+        15.631,
+        -4.298,
+        8.993
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_0PErbDr_Ro_IfcOpeningElement",
+      "node_type": "ifc",
+      "class_name": "Arched (1)",
+      "position": [
+        15.631,
+        -1.098,
+        8.993
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_1FyfOrvSbQ_IfcOpeningElement",
+      "node_type": "ifc",
+      "class_name": "Arched (1)",
+      "position": [
+        15.631,
+        -13.898,
+        3.163
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_27ZZMRpsPk_IfcOpeningElement",
+      "node_type": "ifc",
+      "class_name": "Arched (1)",
+      "position": [
+        15.631,
+        -10.698,
+        3.163
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_3c1KzrXCTJ_IfcOpeningElement",
+      "node_type": "ifc",
+      "class_name": "Arched (1)",
+      "position": [
+        15.631,
+        -7.498,
+        3.163
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_1o8Givy828_IfcOpeningElement",
+      "node_type": "ifc",
+      "class_name": "Arched (1)",
+      "position": [
+        15.631,
+        -4.198,
+        3.163
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_03SBcpEICF_IfcOpeningElement",
+      "node_type": "ifc",
+      "class_name": "Arched (1)",
+      "position": [
+        15.631,
+        -1.038,
+        3.163
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_0JyMPD5nWX_IfcOpeningElement",
+      "node_type": "ifc",
+      "class_name": "Arched (1)",
+      "position": [
+        2.462,
+        -1.098,
+        8.993
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_1VygqlAKhT_IfcOpeningElement",
+      "node_type": "ifc",
+      "class_name": "Arched (1)",
+      "position": [
+        2.462,
+        -4.298,
+        8.993
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_3nnOsyxVW3_IfcOpeningElement",
+      "node_type": "ifc",
+      "class_name": "Arched (1)",
+      "position": [
+        2.462,
+        -7.598,
+        8.993
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_01Y3XX9r3Z_IfcOpeningElement",
+      "node_type": "ifc",
+      "class_name": "Arched (1)",
+      "position": [
+        2.462,
+        -10.638,
+        8.993
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_0g5SFGLpVy_IfcOpeningElement",
+      "node_type": "ifc",
+      "class_name": "Arched (1)",
+      "position": [
+        2.462,
+        -13.998,
+        8.993
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_3BTwXNHxZ4_IfcOpeningElement",
+      "node_type": "ifc",
+      "class_name": "Arched (1)",
+      "position": [
+        2.462,
+        -13.898,
+        3.163
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_1WPZAZjNRp_IfcOpeningElement",
+      "node_type": "ifc",
+      "class_name": "Arched (1)",
+      "position": [
+        2.462,
+        -10.713,
+        3.163
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_0GVlAqroI1_IfcOpeningElement",
+      "node_type": "ifc",
+      "class_name": "Arched (1)",
+      "position": [
+        2.462,
+        -7.503,
+        3.163
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_0TvBDrM4Cb_IfcOpeningElement",
+      "node_type": "ifc",
+      "class_name": "Arched (1)",
+      "position": [
+        2.462,
+        -4.198,
+        3.163
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_2BWPN0gnUB_IfcOpeningElement",
+      "node_type": "ifc",
+      "class_name": "Arched (1)",
+      "position": [
+        2.462,
+        -1.038,
+        3.163
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_3UwHma_wuC_IfcOpeningElement",
+      "node_type": "ifc",
+      "class_name": "009_Round_with_Trim_-_Sunburst",
+      "position": [
+        9.164,
+        3.739,
+        9.901
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_04AOxK$ZZI_IfcOpeningElement",
+      "node_type": "ifc",
+      "class_name": "Arched (1)",
+      "position": [
+        4.031,
+        -18.858,
+        3.468
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_25QEXcpdm4_IfcOpeningElement",
+      "node_type": "ifc",
+      "class_name": "Arched (1)",
+      "position": [
+        8.861,
+        -18.858,
+        9.25
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_2_Dx7jXMo6_IfcOpeningElement",
+      "node_type": "ifc",
+      "class_name": "Arched (1)",
+      "position": [
+        4.082,
+        -18.858,
+        9.038
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_2ybi$zUxM__IfcOpeningElement",
+      "node_type": "ifc",
+      "class_name": "Double Shutter-Arch",
+      "position": [
+        11.081,
+        -18.588,
+        2.792
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_1TSiuAULif_IfcOpeningElement",
+      "node_type": "ifc",
+      "class_name": "Basic Wall",
+      "position": [
+        11.081,
+        -18.638,
+        2.792
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_2$vwYxfqqQ_IfcOpeningElement",
+      "node_type": "ifc",
+      "class_name": "Double Shutter-Arch",
+      "position": [
+        9.081,
+        -18.588,
+        2.792
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_2IrVk$BKD8_IfcOpeningElement",
+      "node_type": "ifc",
+      "class_name": "Basic Wall",
+      "position": [
+        9.081,
+        -18.638,
+        2.792
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_3Uu2dBofQE_IfcOpeningElement",
+      "node_type": "ifc",
+      "class_name": "Arched (1)",
+      "position": [
+        14.031,
+        -18.858,
+        3.468
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_2a2reemXKR_IfcOpeningElement",
+      "node_type": "ifc",
+      "class_name": "Arched (1)",
+      "position": [
+        13.931,
+        -18.858,
+        9.038
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_0kGNjb0rKM_IfcOpeningElement",
+      "node_type": "ifc",
+      "class_name": "Double Shutter-Arch",
+      "position": [
+        6.969,
+        -18.588,
+        2.792
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_37mJCBgGJH_IfcOpeningElement",
+      "node_type": "ifc",
+      "class_name": "Double Shutter-Arch",
+      "position": [
+        5.876,
+        -16.955,
+        1.35
+      ],
+      "source": "ifc"
+    },
+    {
+      "id": "ifc_3Uu1Ohhbea_IfcOpeningElement",
+      "node_type": "ifc",
+      "class_name": "Double Shutter-Arch",
+      "position": [
+        12.358,
+        -16.955,
+        1.35
+      ],
+      "source": "ifc"
+    }
+  ],
+  "edges": [
+    {
+      "from": "visual_0_sink",
+      "to": "visual_1_dining_table",
+      "edge_type": "proximity",
+      "relation": "near",
+      "distance": 1.292
+    },
+    {
+      "from": "visual_2_dining_table",
+      "to": "visual_3_dining_table",
+      "edge_type": "proximity",
+      "relation": "near",
+      "distance": 1.166
+    },
+    {
+      "from": "visual_2_dining_table",
+      "to": "visual_13_toilet",
+      "edge_type": "proximity",
+      "relation": "near",
+      "distance": 1.328
+    },
+    {
+      "from": "visual_3_dining_table",
+      "to": "visual_13_toilet",
+      "edge_type": "proximity",
+      "relation": "near",
+      "distance": 0.777
+    },
+    {
+      "from": "visual_3_dining_table",
+      "to": "visual_14_tv",
+      "edge_type": "proximity",
+      "relation": "near",
+      "distance": 1.741
+    },
+    {
+      "from": "visual_6_dining_table",
+      "to": "visual_7_dining_table",
+      "edge_type": "proximity",
+      "relation": "near",
+      "distance": 1.377
+    },
+    {
+      "from": "visual_8_dining_table",
+      "to": "visual_17_chair",
+      "edge_type": "proximity",
+      "relation": "near",
+      "distance": 1.293
+    },
+    {
+      "from": "visual_9_dining_table",
+      "to": "visual_12_dining_table",
+      "edge_type": "proximity",
+      "relation": "near",
+      "distance": 1.024
+    },
+    {
+      "from": "ifc_0J3vfD0Gz3_IfcColumn",
+      "to": "visual_15_tv",
+      "edge_type": "contains",
+      "relation": "contains",
+      "distance": null
+    },
+    {
+      "from": "ifc_2vU60l_7P2_IfcRoof",
+      "to": "visual_16_potted_plant",
+      "edge_type": "contains",
+      "relation": "contains",
+      "distance": null
+    },
+    {
+      "from": "visual_19_knife",
+      "to": "visual_20_book",
+      "edge_type": "proximity",
+      "relation": "near",
+      "distance": 0.0
+    }
+  ]
+}
