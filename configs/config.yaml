@@ -32,7 +32,7 @@ output:
 # ── Object Detection ──────────────────────────────────
 detection:
   model: yolov8m.pt
-  confidence_threshold: 0.45
+  confidence_threshold: 0.08
   frame_step: 5            # process every Nth frame (speed vs coverage)
   target_classes:          # COCO classes relevant to indoor scenes
     - chair

@@ -253,6 +253,11 @@ def load_depth_frame(depth_path: str, depth_scale: float = 1000.0) -> np.ndarray
     if raw is None:
         raise ValueError(f"Failed to read depth frame: {depth_path}")
 
+    # If loaded as 3-channel (some 16-bit PNGs do this), take first channel
+    # All channels are identical for depth images — no data loss
+    if raw.ndim == 3:
+        raw = raw[:, :, 0]
+
     # Convert to float32 metres
     depth_metres = raw.astype(np.float32) / depth_scale
 
