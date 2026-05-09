@@ -1,0 +1,15 @@
+data/
+output/debug_*
+output/*.png
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+venv/
+.venv/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+*.pt
+*.pth
