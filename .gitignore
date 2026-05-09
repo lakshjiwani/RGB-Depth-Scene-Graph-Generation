@@ -1,6 +1,4 @@
 data/
-output/debug_*
-output/*.png
 __pycache__/
 *.py[cod]
 *.egg-info/
