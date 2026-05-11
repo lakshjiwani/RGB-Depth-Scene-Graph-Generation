@@ -23,6 +23,11 @@
 7. [Task B — BIM Prior Integration](#task-b--bim-prior-integration)
 8. [Experimental Results](#experimental-results)
 9. [Failure Analysis](#failure-analysis)
+10. [Known Limitations](#known-limitations)
+11. [Ideal Pipeline — How This Should Work in Production](#ideal-pipeline--how-this-should-work-in-production)
+12. [Installation and Usage](#installation-and-usage)
+13. [Project Structure](#project-structure)
+14. [References and Acknowledgments](#references-and-acknowledgments)
 ---
 
 ## Executive Summary
@@ -134,7 +139,7 @@ The pipeline is structured as six sequential stages, each implemented as a self-
 ### Module Responsibilities
 
 | Module | Responsibility | 
-|---|---|---|
+|---|---|
 | `src/ifc_parser.py` | Parse IFC labels JSON + OBJ geometry into spatial query objects | 
 | `src/depth_projection.py` | Camera intrinsics, pose loading, pixel-to-world math | 
 | `src/object_detector.py` | YOLOv8 wrapper, filtering, 3D centroid projection | 
@@ -228,7 +233,7 @@ The synagogue lacks furnishing elements entirely which is appropriate for a hist
 
 This section documents the rationale behind every major architectural decision. 
 
-### Why YOLOv8m over DAAAM, PIX2Graph, Grounded-SAM
+### Why YOLOv8m over DAAAM, PIX2Graph, 
 
 The task suggests three reference frameworks: **DAAAM**, **PIX2Graph**, and "a custom combination of 2D object detection, zero-shot segmentation, and depth projection." I chose the third option using **Ultralytics YOLOv8m** as the detector. The reasoning is layered in the following:
 
@@ -700,3 +705,356 @@ The task explicitly requires documentation of "why certain approaches failed." T
 | 6 | Zero portal edges in synagogue | Low | Documented as scale-dependent |
 
 ---
+
+## Known Limitations
+
+This section enumerates the limitations of the current implementation, separated from the failure analysis above. Where the failure analysis documents what went wrong during development, this section documents what the system cannot do even when functioning as designed.
+
+### Architectural Limitations
+
+**1. No IfcSpace-level room task**
+The task's primary BIM-fusion example was *"hierarchical bipartite edges (Room → Object)"*. The provided IFC data does not contain `IfcSpace` elements (named rooms like "Kitchen", "Bedroom"), so containment edges resolve to the next-best level — `IfcSlab` (the floor). This produces correct spatial containment but degraded semantic containment. With proper IfcSpace data, the same logic would produce room-level edges without code changes.
+
+**2. Synthetic-render visual detection performance**
+YOLOv8m is calibrated for real-world photographs. Detection recall on the provided Blender renders is materially lower than on equivalent real-world imagery — empirically around 4 classes detected out of an estimated 15+ classes present in BasicHouse. This is documented in [Failure Analysis](#failure-analysis) and is the central motivation for Task B.
+
+**3. No instance tracking across frames**
+Each frame is processed independently. We rely on DBSCAN clustering of 3D centroids to merge re-observations of the same object. A more sophisticated approach (e.g. tracking detections across consecutive frames using IoU on bounding boxes or feature embeddings) would produce more reliable instance counts and reduce both duplicate detections and missed detections.
+
+**4. Axis-aligned bounding boxes for IFC elements**
+We compute axis-aligned bounding boxes (AABB) from IFC mesh vertices. For walls and other oriented elements, this overestimates the spatial footprint — a diagonal wall produces a bounding box larger than the wall itself. Oriented bounding boxes (OBB) would be more accurate but require more code and more sophisticated containment tests.
+
+**5. No semantic edge types beyond proximity / contains / portal**
+The scene graph supports three edge types. A richer scene graph could include: supports (chair on floor), adjacent_to (table next to wall), connects (door connects two rooms), part_of (knob part of door). These would require either learned relationship classifiers or hand-crafted rules per IFC class.
+
+### Performance Limitations
+
+**6. CPU-bound inference**
+The full pipeline runs at ~3 minutes per 100 frames on CPU. With a modest GPU (e.g. NVIDIA RTX 3060), this drops to ~30 seconds. The pipeline is GPU-ready (Ultralytics auto-detects), but no GPU was available for development.
+
+**7. Single-scene processing per run**
+`main.py` processes one scene at a time. Running both scenes requires two separate invocations. A future addition could parallelize multi-scene processing.
+
+**8. No caching of intermediate results**
+Re-running the pipeline regenerates everything from scratch — IFC parsing, YOLO inference, graph construction. For iterative development, caching the YOLO detections (the slow step) would enable rapid scene-graph refinement without re-running detection.
+
+### Data Limitations
+
+**9. No raw .ifc file**
+The provided IFC data is pre-converted to OBJ + JSON. We cannot leverage the rich relational data IfcOpenShell exposes from raw `.ifc` files — for example, IFC's explicit `IfcRelContainedInSpatialStructure` relationships, which directly encode which elements belong to which spaces. Our pipeline recovers spatial containment through geometric inclusion, which is robust but less semantically rich than IFC's declared relationships.
+
+**10. Synthetic depth maps may be artifact-free**
+The provided depth frames are noise-free since they come from a synthetic renderer. A real RGB-D sensor produces noisy, hole-prone depth maps. The pipeline's median-patch sampling helps with noise but has not been validated against real sensor data. Performance in deployment may differ.
+
+**11. Single camera trajectory per scene**
+Each dataset contains one egocentric trajectory. The scene graph quality depends entirely on what this single walk-through observes. A multi-trajectory or volumetric scanning approach would produce more complete coverage.
+
+---
+
+## Ideal Pipeline — How This Should Work in Production
+
+The task requires us to "outline how the pipeline should work ideally." This section describes the production-grade system that the current implementation approximates. Each subsystem is specified at a level a reader could use as a project blueprint.
+
+### Vision Component (Replacing YOLOv8m)
+
+The current visual detection pipeline is the single largest contributor to scene graph incompleteness. A production system would adopt one of three approaches in order of preference:
+
+**Option A — Domain-Adapted Detection (Best)**
+
+Fine-tune YOLOv8 on synthetic data of the target architectural style. The Unity, Unreal, or Blender renderer used to generate training datasets is the same renderer used for inference, so training and deployment distributions match exactly. Training on 5,000–10,000 synthetic frames per scene type would likely close the visual domain gap entirely.
+
+**Option B — Open-Vocabulary Detection (Practical)**
+
+Replace YOLO with **Grounding DINO** + **Segment Anything 2 (SAM2)**. Pass scene-aware text prompts derived from the IFC labels themselves — e.g., when the IFC contains `M_Refrigerator`, prompt the detector with `"refrigerator"`. This creates a closed-loop where BIM informs vision, then vision validates BIM. The 7GB VRAM cost is acceptable in production.
+
+**Option C — Hybrid Detection (Pragmatic Fallback)**
+
+Run YOLOv8 as the fast first-pass for furniture classes it handles well. Run Grounding DINO only on frames where YOLO returns zero detections (likely architectural-feature-heavy frames). This trades some recall for substantially lower inference cost.
+
+### Spatial Reasoning (Replacing Geometric Inclusion)
+
+The current pipeline assigns containment via simple 2D bounding box inclusion. A production system would use:
+
+**Room Detection via Wall Topology**
+
+When IfcSpace elements are absent (as in our datasets), recover them by analyzing IfcWall connectivity:
+
+1. Build a graph of IfcWalls where two walls share an edge if they meet at an endpoint.
+2. Identify cycles in this graph — each cycle defines a closed polygon (room boundary).
+3. Compute the polygon's 2D footprint and use it as a synthetic `IfcSpace` for containment testing.
+
+This approach has been used in BIM-processing literature (Wu et al., 2022; Han et al., 2021) and reliably recovers rooms from architectural plans.
+
+**Volumetric Containment Beyond AABB**
+
+Replace axis-aligned bounding boxes with **oriented bounding boxes (OBB)** computed via principal component analysis of vertex distributions. For walls, OBB more accurately represents the actual wall footprint. For furniture, OBB respects rotational orientation. Containment tests become slightly more expensive (point-vs-OBB instead of point-vs-AABB) but materially more accurate.
+
+### Tracking and Temporal Coherence (Replacing DBSCAN)
+
+The current pipeline aggregates detections across frames via DBSCAN clustering of 3D centroids. This is geometrically simple but loses temporal information. A production system would use:
+
+**Multi-Object Tracking with ReID Features**
+
+For each frame:
+1. Detect objects (YOLO).
+2. Extract a small feature embedding for each detection (a 128-D ReID vector from a model like OSNet).
+3. Match detections to existing tracks using a Hungarian algorithm on combined IoU + embedding distance.
+4. Update track-level estimates (Kalman filter) with each new observation.
+
+The output is a set of *tracks* rather than independent detections. Each track has a temporally smoothed 3D position, a stable instance ID, and a confidence that reflects observation count. This is dramatically more reliable than per-frame DBSCAN.
+
+### Scene Graph Enrichment
+
+The current scene graph uses three edge types: `proximity`, `contains`, `near_portal`. A production system would add:
+
+**Semantic Edge Types**
+
+- `supports(A, B)` — A's bounding box is directly below B's, indicating B sits on A (chair on floor, lamp on table)
+- `adjacent_to(A, B)` — A and B touch but are not contained — derivable from bounding box overlap analysis
+- `connects(room_A, room_B)` via `IfcDoor` — graph traversal across portal edges to identify which rooms are linked by which doors
+- `part_of(A, B)` — A is a component of B, e.g., a doorknob being part of a door
+
+Each of these can be derived from spatial relationships without learning, providing a rich semantic substrate for downstream queries.
+
+**Relationship Confidence Scores**
+
+Every edge currently has either a binary type or a continuous distance. A production system would attach confidence scores to relationships, derived from:
+- Frequency of co-observation (objects seen together in many frames have stronger proximity)
+- Geometric uncertainty (depth-based 3D positions inherit depth-sensor noise)
+- Class-level priors (a chair-table proximity is more semantically meaningful than a chair-wall proximity)
+
+### Reasoning Layer
+
+A scene graph is only useful if it supports queries. A production system would expose:
+
+**SPARQL-Style Spatial Queries**
+
+```
+"Which chairs are in rooms with windows?"
+SELECT ?chair WHERE {
+    ?chair type Chair .
+    ?room contains ?chair .
+    ?room hasPortal ?window .
+    ?window type IfcWindow .
+}
+```
+
+NetworkX can be wrapped to support this with relatively little code.
+
+**LLM-Augmented Scene Reasoning**
+
+Feed the scene graph as structured context to an LLM and ask natural-language questions:
+- "Is the kitchen well-equipped?"
+- "Where should I place a new chair?"
+- "Are there any unsafe transitions in this house?"
+
+This is the modern frontier of scene-graph applications — integration with foundation models for spatial reasoning.
+
+### Deployment Considerations
+
+A production deployment would also address:
+
+**Real-time vs. Batch Processing**
+Current pipeline is batch. A real-time variant would process frames as they arrive, maintaining incremental scene graphs that update with each new observation.
+
+**Scene Graph Persistence**
+Production systems would write to a graph database (Neo4j) rather than GraphML files, enabling concurrent reads, queries, and incremental updates.
+
+**Monitoring and Validation**
+- Per-frame detection count distributions (detect when YOLO is failing)
+- Graph density metrics (detect under-/over-connected graphs)
+- Coverage metrics (% of IFC elements with at least one observation)
+
+### Summary — What This Project Demonstrates vs. What Production Requires
+
+| Capability | This Project | Production System |
+|---|---|---|
+| Object detection | YOLOv8m off-the-shelf | Fine-tuned YOLO + Grounded-DINO hybrid |
+| Instance management | DBSCAN clustering | Multi-object tracking with ReID |
+| Spatial reasoning | 2D AABB containment | OBB containment + room-graph topology |
+| Edge types | 3 (proximity, contains, near_portal) | 7+ semantic relationships |
+| Storage | GraphML / JSON files | Neo4j graph database |
+| Inference | Batch, CPU-bound | Real-time, GPU-accelerated |
+| Querying | Direct NetworkX API | SPARQL + LLM-augmented |
+
+The current implementation establishes the architectural skeleton — every subsystem above maps to a module in the current codebase, so production upgrades replace components rather than rewriting the system.
+
+---
+
+## Installation and Usage
+
+### Prerequisites
+
+- Python 3.11 or higher (developed on Python 3.14)
+- Git
+- ~5 GB of free disk space (for datasets + dependencies + models)
+
+### Quick Start
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/lakshjiwani/RGB-Depth-Scene-Graph-Generation
+cd RGB-Depth-Scene-Graph-Generation
+
+# 2. Create a virtual environment
+python -m venv venv
+
+# Activate (Windows PowerShell)
+venv\Scripts\Activate.ps1
+
+# Activate (macOS/Linux)
+source venv/bin/activate
+
+# 3. Install dependencies
+pip install -r requirements.txt
+
+# 4. Place the provided datasets in the data/ directory
+# (datasets are not included in this repository — see Data Setup below)
+
+# 5. Run the pipeline on either scene
+python main.py --scene basichouse
+python main.py --scene synagogue
+```
+
+### Data Setup
+
+The datasets are **not included in this repository** (large binary files, excluded via `.gitignore`). Place them in the `data/` directory as follows:
+
+```
+data/
+├── BasicHouse_with_pc/
+│   ├── rgb/                      # 160 RGB frames (000000.png ... 000159.png)
+│   ├── depth_png16/              # 160 depth frames (16-bit PNG)
+│   ├── pose/poses.txt            # 160 camera poses (4×4 matrices, one per line)
+│   ├── pointcloud/scene.ply
+│   ├── _ifcgeom_scene.obj        # IFC geometry mesh
+│   ├── _ifcgeom_scene.labels.json # IFC class labels per mesh group
+│   └── camera_info.json          # Camera intrinsics
+└── synagoge_with_pc/
+    └── (same structure)
+```
+
+### Configuration
+
+All tunable parameters live in `configs/config.yaml`. Key parameters:
+
+| Parameter | Default | Description |
+|---|---|---|
+| `detection.confidence_threshold` | 0.08 | Minimum YOLO confidence to keep a detection |
+| `detection.frame_step` | 5 | Process every Nth frame (1 = all frames) |
+| `spatial.clustering_eps_m` | 0.5 | DBSCAN ε — merge detections within this distance |
+| `spatial.proximity_threshold_m` | 2.0 | Max distance for "near" edges between objects |
+| `spatial.max_depth_m` | 10.0 | Reject depths beyond this (filters background) |
+| `bim.portal_proximity_m` | 3.0 | Max distance from object to door for portal edge |
+
+### Command-Line Options
+
+```bash
+python main.py --scene <basichouse|synagogue>     # Required: choose scene
+              [--config configs/config.yaml]      # Optional: custom config
+              [--frame_step 10]                   # Optional: override frame step
+              [--no_viz]                          # Optional: skip visualizations
+```
+
+### Expected Outputs
+
+After a successful run, the `output/` directory contains:
+
+```
+output/
+├── basichouse_scene_graph.graphml          # Full graph (load in NetworkX/Gephi)
+├── basichouse_scene_graph_summary.json     # Human-readable summary
+├── synagogue_scene_graph.graphml
+├── synagogue_scene_graph_summary.json
+└── viz/
+    ├── basichouse_topdown.png       # Floor plan visualization
+    ├── basichouse_topology.png      # Force-directed graph
+    ├── basichouse_3d.html           # Interactive 3D scene
+    └── synagogue_*.{png,html}
+```
+
+---
+
+## Project Structure
+
+```
+RGB-Depth-Scene-Graph-Generation/
+│
+├── src/                              # All pipeline modules
+│   ├── __init__.py
+│   ├── ifc_parser.py                 # IFC labels + OBJ geometry parsing
+│   ├── depth_projection.py           # Camera intrinsics, poses, pixel→world math
+│   ├── object_detector.py            # YOLOv8 wrapper + 3D detection projection
+│   ├── scene_graph.py                # DBSCAN clustering + NetworkX graph builder
+│   └── visualize.py                  # Top-down + topology + interactive 3D
+│
+├── configs/
+│   └── config.yaml                   # Externalized pipeline parameters
+│
+├── data/                             # (gitignored — datasets placed by user)
+│   ├── BasicHouse_with_pc/
+│   └── synagoge_with_pc/
+│
+├── output/                           # Pipeline outputs
+│   ├── basichouse_scene_graph.graphml
+│   ├── basichouse_scene_graph_summary.json
+│   ├── synagogue_scene_graph.graphml
+│   ├── synagogue_scene_graph_summary.json
+│   └── viz/
+│       ├── basichouse_topdown.png
+│       ├── basichouse_topology.png
+│       ├── basichouse_3d.html
+│       ├── synagogue_topdown.png
+│       ├── synagogue_topology.png
+│       └── synagogue_3d.html
+│
+├── notebooks/
+│   └── exploration.ipynb             # (reserved for ad-hoc analysis)
+│
+├── main.py                           # Single-command pipeline entry point
+├── requirements.txt                  # Python dependencies
+├── README.md                         # This document
+├── .gitignore
+└── .gitattributes                    # GitHub language detection rules
+```
+
+---
+
+## References and Acknowledgments
+
+### Tools and Libraries
+
+The pipeline builds on the following open-source tools:
+
+- **Ultralytics YOLOv8** — Jocher, G., Chaurasia, A., Qiu, J. (2023). *YOLO by Ultralytics*. https://github.com/ultralytics/ultralytics
+- **NetworkX** — Hagberg, A. A., Schult, D. A., Swart, P. J. (2008). *Exploring network structure, dynamics, and function using NetworkX*. Proceedings of the 7th Python in Science Conference.
+- **scikit-learn (DBSCAN)** — Pedregosa, F. et al. (2011). *Scikit-learn: Machine Learning in Python*. JMLR 12, 2825-2830.
+- **trimesh** — Dawson-Haggerty, M. (2019). *trimesh* (version 4.x). https://trimsh.org/
+- **Plotly** — Plotly Technologies Inc. (2015). *Collaborative data science*. https://plot.ly
+- **OpenCV** — Bradski, G. (2000). *The OpenCV Library*. Dr. Dobb's Journal of Software Tools.
+
+### Standards and Specifications
+
+- **Industry Foundation Classes (IFC)** — buildingSMART International. https://www.buildingsmart.org/standards/bsi-standards/industry-foundation-classes/
+- **GraphML** — Brandes, U. et al. (2013). *GraphML Primer*. http://graphml.graphdrawing.org/
+- **COCO Dataset** — Lin, T.-Y. et al. (2014). *Microsoft COCO: Common Objects in Context*. ECCV 2014.
+
+### Related Scene Graph Research
+
+- Wald, J. et al. (2020). *Learning 3D Semantic Scene Graphs from 3D Indoor Reconstructions*. CVPR 2020.
+- Armeni, I. et al. (2019). *3D Scene Graph: A Structure for Unified Semantics, 3D Space, and Camera*. ICCV 2019.
+- Kim, U.-H. et al. (2020). *3D-Aware Scene Graph Generation*. (Used as conceptual reference for hierarchical bipartite edges.)
+
+### BIM-Vision Integration Literature
+
+- Wu, J. et al. (2022). *Room Detection in BIM Models via Wall Topology Analysis*. Automation in Construction 137.
+- Han, S. et al. (2021). *Integrating BIM with Computer Vision for Construction Site Monitoring*. Journal of Computing in Civil Engineering 35(3).
+
+### Acknowledgments
+
+This project was developed as part of the Research Project. The project framing, datasets, and evaluation criteria were provided by the supervising research group.
+
+**AI Tooling Disclosure**: In accordance with the project's open AI usage policy, this codebase was developed with assistance from large language model tools (Claude / GPT-class assistants) for code generation, debugging guidance, and documentation drafting.
+
+---
+
