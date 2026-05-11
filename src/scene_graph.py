@@ -1,11 +1,10 @@
 """
-scene_graph.py
-──────────────
+
 Constructs the final 3D scene graph by combining:
   - Visual detections from object_detector.py (Task A)
   - IFC structural elements from ifc_parser.py  (Task B)
 
-Assignment Context:
+Task Context:
     Task A requires: G = (V_obj, E_rel)
       V_obj → object nodes with 3D centroids
       E_rel → spatial edges (proximity, nearest-neighbor)
@@ -208,7 +207,7 @@ class SceneGraphBuilder:
         """
         Args:
             proximity_threshold_m  : max distance for "near" edge (Task A)
-            containment_tolerance  : bbox expansion for room assignment (Task B)
+            containment_tolerance  : bbox expansion for room task (Task B)
             portal_proximity_m     : max distance from object to door for
                                      "near_portal" edge (Task B)
         """
@@ -300,7 +299,7 @@ class SceneGraphBuilder:
         """
         Task A — Adds "proximity" edges between visual nodes within threshold.
 
-        This implements the assignment requirement:
+        This implements the task requirement:
             "Edges should represent spatial heuristics (e.g., proximity,
              nearest-neighbor)"
 
@@ -345,7 +344,7 @@ class SceneGraphBuilder:
         """
         Task B — Adds "contains" edges from IFC elements to visual objects.
 
-        This implements the assignment requirement:
+        This implements the task requirement:
             "Map the localized 3D object centroids into their corresponding
              IFC rooms, creating hierarchical bipartite edges (Room → Object)
              using simple geometric inclusion logic."
@@ -408,7 +407,7 @@ class SceneGraphBuilder:
         two spaces — a meaningful spatial relationship.
 
         This partially implements the "connective portals (IfcDoor)"
-        requirement from the assignment.
+        requirement from the task.
 
         Returns:
             Number of edges added

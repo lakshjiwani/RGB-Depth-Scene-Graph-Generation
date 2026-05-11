@@ -1,6 +1,4 @@
 """
-visualize.py
-────────────
 Produces three visualizations of the 3D scene graph for documentation
 and qualitative evaluation:
 

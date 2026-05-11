@@ -1,11 +1,9 @@
 """
-depth_projection.py
-───────────────────
 Converts 2D pixel detections + depth maps + camera poses
 into 3D world-space coordinates.
 
-Assignment Context (Task A):
-    The assignment requires instantiating a 3D scene graph where nodes
+Task Context (Task A):
+    The task requires instantiating a 3D scene graph where nodes
     represent localized objects with 3D centroids or bounding boxes.
 
     This module provides the mathematical bridge between:
@@ -155,7 +153,7 @@ class PoseLoader:
     The matrix transforms a point from camera space to world space:
         P_world = T_cam2world @ P_camera
 
-    Assignment note:
+    task note:
         The task states poses are "already aligned to the global IFC
         coordinate system", meaning we can directly use these matrices
         to place detected objects in the same coordinate frame as the
@@ -330,7 +328,7 @@ def camera_to_world_space(
     Transforms a 3D point from camera space to world space.
 
     Uses the camera-to-world pose matrix (already aligned to IFC
-    coordinate system as stated in the assignment).
+    coordinate system as stated in the task).
 
     Math:
         P_world = T_cam2world @ [X_cam, Y_cam, Z_cam, 1]^T

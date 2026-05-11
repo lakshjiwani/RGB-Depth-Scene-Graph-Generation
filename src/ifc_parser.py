@@ -1,6 +1,4 @@
 """
-ifc_parser.py
-─────────────
 Parses pre-converted IFC geometry data from:
   - _ifcgeom_scene.labels.json  : maps mesh-object IDs → IFC class + name
   - _ifcgeom_scene.obj          : full 3D mesh geometry of the building
@@ -91,7 +89,7 @@ class BoundingBox3D:
                            tolerance: float = 0.2) -> bool:
         """
         2D containment check using only X and Y (ignores Z height).
-        More robust for room assignment when depth estimates are noisy.
+        More robust for room task when depth estimates are noisy.
         This is the primary method used for Room → Object assignment.
         """
         lo = self.min_xyz[:2] - tolerance
@@ -215,7 +213,7 @@ class IFCScene:
         """
         Returns the IFC element whose bounding box CONTAINS the given point.
 
-        This implements the geometric inclusion logic described in the assignment:
+        This implements the geometric inclusion logic described in the task:
             "map the localized 3D object centroids into their corresponding
              IFC rooms, creating hierarchical bipartite edges (Room → Object)"
 

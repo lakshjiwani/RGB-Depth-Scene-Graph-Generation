@@ -2,7 +2,7 @@
 Wraps YOLOv8 for 2D object detection on RGB frames, then combines
 detections with depth and pose data to produce 3D-localized objects.
 
-Assignment Context (Task A):
+Task Context (Task A):
     The task requires "2D object detection" combined with "depth projection"
     to create scene graph nodes representing localized objects.
 
