@@ -22,7 +22,7 @@
 6. [Task A — Visual Scene Graph Generation](#task-a--visual-scene-graph-generation)
 7. [Task B — BIM Prior Integration](#task-b--bim-prior-integration)
 8. [Experimental Results](#experimental-results)
-
+9. [Failure Analysis](#failure-analysis)
 ---
 
 ## Executive Summary
@@ -549,20 +549,22 @@ Same as BasicHouse — no scene-specific tuning. This is intentional, to test wh
 
 **Output statistics**
 ```
-Total runtime           : 2751.9 seconds (~46 minutes, CPU)
-  IFC parsing           : 49.0 s  (larger building, more elements)
-  Camera setup          : 0.1 s
-  Object detection      : 2306.2 s  (77 frames, ~30s per frame)
-  Graph construction    : 0.5 s
-  Visualization         : 15.5 s
+Total runtime         : 574.2 seconds (CPU)
+IFC parsing           : 2.0 s   
+Camera setup          : ~0.3 s
+Model loading         : 53.7 s  
+Object detection      : 419.1 s (77 frames)
+Per frame             : ~5.4 
+Graph construction    : ~0.9 s
+Visualization         : ~25 s
 
 Raw detections          : 21 (across 9 classes)
 After DBSCAN clustering : 21 unique objects (no duplicates)
 Total graph nodes       : 115 (21 visual + 94 IFC active)
 Total graph edges       : 11
-  proximity edges       : 9
-  contains edges        : 2
-  near_portal edges     : 0
+proximity edges       : 9
+contains edges        : 2
+near_portal edges     : 0
 ```
 
 **Visual detections by class**
@@ -579,7 +581,17 @@ Total graph edges       : 11
 | knife | 1 | Implausible — false positive |
 | book | 1 | Plausible (prayer books) |
 
-The contrast with BasicHouse is evident. The synagogue contains few of YOLO's COCO classes, so the model "hallucinates" plausible-looking matches on architectural features. The detected `knife` and `book` share the exact same 3D position `[3.401, 7.085, -4.829]`, indicating two competing class predictions for the same image region.
+**Notable graph structures**
+
+The two containment edges in the synagogue are scientifically interesting despite their implausibility:
+
+- `IfcColumn (Square Smooth) → tv` — a flat-shaded pillar surface was detected as a TV screen; the column's bounding box contains the detection centroid ✓ (geometrically correct, semantically wrong)
+- `IfcRoof → potted plant` — a ceiling/upper-level surface patch detected as a plant; contained within a roof element bounding box ✓
+
+The most notable proximity edges:
+
+- `dining table → toilet` at 0.777 m — two false positives spatially co-located, both likely from the same architectural surface cluster. This illustrates the domain gap in concentrated form: YOLO detects both a furniture item and a plumbing fixture from the same flat-shaded polygon.
+- `knife → book` at 0.000 m — identical 3D position `[3.401, 7.085,-4.829]`, two competing class predictions from the same image region.
 
 **Cross-scene comparison**
 
@@ -591,7 +603,8 @@ The contrast with BasicHouse is evident. The synagogue contains few of YOLO's CO
 | Portal edges | 10 | 0 | 0.00× |
 | Plausible classes | 4 / 4 | ~4 / 9 | — |
 
-The dramatic collapse in containment edges (35 → 2) reflects a structural difference between the IFC files: BasicHouse contains one large `IfcSlab` (the floor) whose bounding box covers the entire interior, so every detected object falls inside it. The synagogue's IFC is segmented into many smaller architectural elements with smaller individual bounding boxes, so most detections fall outside all of them.
+The dramatic collapse in containment edges (35 → 2) reflects a structural difference between the IFC files: BasicHouse contains one large `IfcSlab` whose bounding box covers the entire interior, so every detected object falls inside it. The synagogue's IFC is segmented into many smaller architectural
+elements with smaller individual bounding boxes, so most detections fall outside all of them.
 
 This is a **scientific finding, not a bug**: the same pipeline applied to two scenes with different BIM granularity produces measurably different fusion behaviour. A real production system would handle this with `IfcSpace`-level segmentation, 
 <!-- discussed in [Ideal Pipeline](#ideal-pipeline--how-this-should-work-in-production). -->
@@ -611,5 +624,79 @@ The synagogue topology is dramatically sparser than BasicHouse — only 11 edges
 ### Interactive 3D Visualizations
 
 Both scenes also produce interactive HTML visualizations (`output/viz/basichouse_3d.html`, `output/viz/synagogue_3d.html`) that allow rotation, zoom, and hover-tooltips on every node. These are best viewed in a desktop browser.
+
+---
+
+## Failure Analysis
+
+The task explicitly requires documentation of "why certain approaches failed." This section catalogues the failure modes encountered during development, the root cause analysis for each, and the mitigation (where attempted) or acknowledgment (where unresolved).
+
+### Failure 1 — Visual Domain Gap (Primary Failure Mode)
+
+**Symptom:** YOLOv8m detects only a small subset of visible objects, completely misses several IFC-confirmed objects (refrigerator, washing machine, sink, cabinets), and produces semantically nonsensical detections in the synagogue (toilet, mouse, knife).
+
+**Root cause:** YOLOv8m is pretrained on the COCO dataset, which consists of real-world photographs. The provided datasets are **synthetic Blender renders** of architectural CAD models. The rendering style is flat-shaded, untextured, and uses solid colour blocks for material — visually nothing like real photography.
+
+**Evidence of severity:** A 5-frame diagnostic run at confidence 0.05 (extremely permissive) on the BasicHouse data revealed YOLO never detects the refrigerator at any confidence level. On the synagogue, YOLO returns `stop sign` and `traffic light` detections on flat coloured wall surfaces — clear evidence the model is matching colour patches, not learned object features.
+
+**Mitigation applied:** We lowered the confidence threshold from the standard 0.45 to 0.08, accepting more false positives in exchange for any true positives at all. This is documented in `configs/config.yaml`.
+
+### Failure 2 — Single-Mesh OBJ Loading via Trimesh
+
+**Symptom:** When the IFC OBJ file was loaded via `trimesh.load(obj_path, force="scene")`, the resulting scene contained only **1 mesh group** instead of the expected 154. All IFC elements ended up sharing a single global bounding box, collapsing the entire BIM prior into one node.
+
+**Root cause:** Trimesh's default OBJ loader merges geometry groups by default, treating the OBJ as a single connected mesh. The `force="scene"` parameter splits by *materials*, not by *object groups*. There is no flag in trimesh that preserves per-group geometry for IFC-style OBJ exports.
+
+**Mitigation applied:** Replaced the trimesh.load call with a manual line-by-line OBJ parser in `load_ifc_geometry()`. The parser tracks the current group name from `o` / `g` lines and accumulates vertices per group. This recovered all 154 distinct mesh groups successfully. It means that library defaults are not always right. When working with domain-specific data exports (IFC-via-OBJ, CAD-derived data), assume the parser may need overriding. Trimesh remains used for spatial queries downstream — only the loading step needed the manual override.
+
+### Failure 3 — Depth Frame Channel Confusion
+
+**Symptom:** Mid-pipeline, an exception `ValueError: too many values to unpack (expected 2, got 3)` was raised when accessing `depth_frame.shape`.
+
+**Root cause:** The 16-bit PNG depth files were being loaded by OpenCV as 3-channel images `(H, W, 3)` rather than the expected single-channel `(H, W)`. All three channels contained the same depth value but the code expected single-channel input.
+
+**Mitigation applied:** Added a defensive check in `load_depth_frame()` that takes `raw[:, :, 0]` if `raw.ndim == 3`. Since all channels are identical for depth, no data is lost.
+
+### Failure 4 — Containment Edges Mapping All Objects to IfcSlab
+
+**Symptom:** In BasicHouse, every visual detection maps to `IfcSlab` via a `contains` edge. The result is 35 edges all pointing at the same node — `IfcSlab` becomes a hub with low information content.
+
+**Root cause:** The provided IFC data lacks `IfcSpace` elements — the IFC class that defines named rooms (Kitchen, LivingRoom, Bedroom). Without IfcSpace, the most spatially appropriate "container" for any indoor object is the floor slab. The floor slab's bounding box covers the entire building footprint, so every interior detection legitimately falls inside it.
+
+**Mitigation considered:** Generate synthetic IfcSpace volumes from the IFC walls (room-finding via wall enclosure). This is non-trivial — it requires graph traversal of wall adjacencies, ceiling-height determination, and handling of open-plan layouts. 
+
+**Mitigation applied:** Documented as an limitation. The pipeline correctly maps to the most spatially appropriate IFC element available; if the input data contained named rooms, those would naturally be preferred (the existing `find_containing_element()` logic would select the smaller, more specific bounding box).
+
+### Failure 5 — Identical 3D Positions for Different Classes (Synagogue)
+
+**Symptom:** The synagogue detection set includes both `knife` and `book` at exactly the same 3D coordinate `[3.401, 7.085, -4.829]`.
+
+**Root cause:** YOLOv8 returns its top-k detections per image without enforcing class-level non-maximum suppression by default. Two competing class predictions for the same image region with overlapping bounding boxes both pass the confidence threshold. When their centre pixels and depths are identical, they project to identical 3D points.
+
+**Mitigation considered:** Enable class-aware NMS in YOLO, or post-process detections with a per-frame NMS step.
+
+**Mitigation applied:** Documented as a known artifact. In a multi-class scene graph, occasional positional collisions are expected when objects genuinely overlap visually. Suppressing them risks losing real detections (a book *on* a desk, a chair *next to* a table).
+
+### Failure 6 — Zero Portal Edges in Synagogue
+
+**Symptom:** The synagogue scene graph contains zero `near_portal` edges, despite the building having 5 IfcDoors and 30 IfcWindows.
+
+**Root cause:** The portal proximity threshold (3.0 m) is calibrated for residential-scale buildings. The synagogue is much larger (84 m × 60 m × 16 m), and the camera trajectory passes through central spaces rather than near doorways. Combined with the limited visual detection count (only 21 objects), no detected object happens to fall within 3 metres of any door or window.
+
+**Mitigation considered:** Make the portal threshold scene-aware — e.g., scale by building diagonal. Or perform path-finding from objects to doors using IFC wall connectivity.
+
+**Mitigation applied:** Documented as a scale-dependent limitation. The pipeline behaviour is correct for the data; the threshold is conservative.
+
+
+### Summary Table
+
+| # | Failure | Severity | Status |
+|---|---|---|---|
+| 1 | Visual domain gap (synthetic vs real) | High — motivates entire Task B | Documented, partial mitigation via low confidence threshold |
+| 2 | Trimesh single-mesh OBJ loading | Medium | Fully resolved via manual OBJ parser |
+| 3 | Depth frame channel confusion | Low | Fully resolved via defensive check |
+| 4 | All objects map to IfcSlab | Medium — limits semantic richness | Documented as data limitation |
+| 5 | Identical 3D positions for different classes | Low | Documented as expected artifact |
+| 6 | Zero portal edges in synagogue | Low | Documented as scale-dependent |
 
 ---
