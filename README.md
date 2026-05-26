@@ -46,7 +46,7 @@ This project implements a complete pipeline that transforms an egocentric RGB-D 
 | Raw detections | 45 | 21 |
 | Scene graph nodes | 48 | 115 |
 | Scene graph edges | 92 | 11 |
-| Pipeline runtime | 201s on CPU | 2752s on CPU |
+| Pipeline runtime | 201s on CPU | 574s on CPU |
 
 <!-- This README documents the scientific reasoning behind every architectural decision, the failure modes encountered (most notably the visual domain gap between YOLO's COCO training distribution and the provided synthetic Blender renders), the limitations of the current implementation, and a clear specification of how the pipeline *should* work in an ideal production deployment. -->
 
